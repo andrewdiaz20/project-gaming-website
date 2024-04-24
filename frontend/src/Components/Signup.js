@@ -104,4 +104,8 @@ function Signup(props) {
     );
 }
 
+<<<<<<< HEAD
 export default SignUp;
+=======
+export default Signup;
+>>>>>>> 4cabcaa6778c9e4a84c1f4654fa4bbdf3b2cbe8b
