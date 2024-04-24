@@ -1,17 +1,21 @@
 .HomeTitle{
   color: aqua;
-  border: 1px solid black;
-  border-radius: 1em;
-  background-color: black;
+  border: 1px solid #1b1b1b;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #1b1b1b;
+  font-stretch: 100%;
+  font-family: cursive;
+  padding-left: 1em;
 }
 
 .navbar{
+  flex-direction: row;
+  display: flex;
   list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  border: 1px solid #E8E8E8;
-  background-color: #E8E8E8;
+  justify-content: space-between;
+  /* justify-content: space-between; */
+  padding-left: 1px;
 }
 
 ul{
@@ -22,5 +26,23 @@ ul{
 }
 
 li a {
+  border-radius: 1em;
   text-decoration: none;
+  border: 3px solid #D3D3D3;
+  padding-left: 7em;
+  padding-right: 7em;
+  background-color: #D3D3D3;
+  color: white;
 }
+
+.item{
+  flex-grow: 4;
+}
+.item2{
+  padding-right: 25em;
+}
+
+footer{
+  
+}
+

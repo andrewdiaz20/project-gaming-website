@@ -7,20 +7,20 @@ function Home() {
     return (
         <main>
             <div class="HomeTitle">
-                <h1>GGG</h1>
+                <h1>GameGlanceGiggles</h1>
             </div>
             <nav class="navbar">
-                <ul>
+                <ul class="navbar">
                     <li><a>Search</a></li>
                     <li><a>Home</a></li>
-                    <li><a>Contact</a></li>
-                    <li><a>Profile</a></li>
+                    <li><a class="item2">Profile</a></li>
                 </ul>
             </nav>
             <div>
-                <img height="300" width="500" src="http://localhost:5000/images/chia-fruit-drink.jpg" alt="Chia Fruit Shake" />
+                <img height="300" width="800" src="http://localhost:5000/images/chia-fruit-drink.jpg" alt="Chia Fruit Shake" />
             </div>
             <div></div>
+            <footer>Must got at bottom</footer>
         </main>
     )
 }
