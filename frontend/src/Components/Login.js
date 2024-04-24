@@ -35,4 +35,4 @@ function Login() {
     );
 }
 
-default Login;
+export default Login;
