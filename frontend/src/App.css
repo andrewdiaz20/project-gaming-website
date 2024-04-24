@@ -43,6 +43,12 @@ li a {
 }
 
 footer{
-  
+  border-radius: 1em;
+  color:#1b1b1b;
+  bottom: 0;
+  border: 3px solid #1b1b1b;
+  background-color: #1b1b1b;
+  margin-top: 55vh;
+  padding-bottom: 18vh;
 }
 
