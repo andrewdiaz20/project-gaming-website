@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import './App.css';
 import RandomGame from './Components/RandomGame';
+import Home from './Components/Home';
 
 function App(){
 
@@ -9,7 +10,8 @@ function App(){
     <div>
       <Router>
           <Routes>
-              <Route path='/' element={<RandomGame />}/>
+              <Route exact path = "Home" element={<Home />}/>
+              <Route exact path ='/' element={<RandomGame />}/>
           </Routes>
       </Router>
     </div>
