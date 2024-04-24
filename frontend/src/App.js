@@ -10,8 +10,8 @@ function App(){
     <div>
       <Router>
           <Routes>
-              <Route exact path = "Home" element={<Home />}/>
-              <Route exact path ='/' element={<RandomGame />}/>
+              <Route path = "Home" element={<Home />}/>
+              <Route path ='/' element={<RandomGame />}/>
           </Routes>
       </Router>
     </div>
