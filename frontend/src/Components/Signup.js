@@ -1,16 +1,41 @@
-import Home from "./Home";
+
 
 function Signup() {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+
+    const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const user = { username, email, password };
-        console.log(user);
+        signup();
     }
 
+    const signup = () => {
+        fetch('http://localhost:5000/signup', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                username: username,
+                email: email,
+                password: password,
+                firstName: firstName,
+                lastName: lastName
+            }),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.status === 'ok') {
+                    navigate('/login');
+                } else {
+                    alert(data.error);
+                }
+    }
     const handleChange = (event) => {
         const { name, value } = event.target;
         if (name === 'username') {
@@ -78,4 +103,8 @@ function Signup() {
     );
 }
 
+<<<<<<< HEAD
+export default SignUp;
+=======
 export default Signup;
+>>>>>>> 4cabcaa6778c9e4a84c1f4654fa4bbdf3b2cbe8b
