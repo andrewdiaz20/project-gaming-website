@@ -1,4 +1,4 @@
-
+import Home from "./Home";
 
 function Signup() {
     const [username, setUsername] = useState('');
