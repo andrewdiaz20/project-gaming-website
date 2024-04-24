@@ -17,10 +17,10 @@ function Home() {
                 </ul>
             </nav>
             <div>
-                <img height="300" width="800" src="http://localhost:5000/images/chia-fruit-drink.jpg" alt="Chia Fruit Shake" />
+                Gameinfoinhere
             </div>
             <div></div>
-            <footer>Must got at bottom</footer>
+            <footer>UnknownInfoInHere</footer>
         </main>
     )
 }
