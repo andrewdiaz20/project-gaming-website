@@ -78,4 +78,4 @@ function Signup() {
     );
 }
 
-default Signup;
+export default Signup;
