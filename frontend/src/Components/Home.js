@@ -13,7 +13,7 @@ function Home() {
                 <ul class="navbar">
                     <li><a>Search</a></li>
                     <li><a>Home</a></li>
-                    <li><a>Login</a></li>
+                    <li><a href='Login'>Login</a></li>
                     <li><a class="item2">Profile</a></li>
                 </ul>
             </nav>
