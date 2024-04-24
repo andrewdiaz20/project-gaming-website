@@ -10,8 +10,9 @@ function App(){
     <div>
       <Router>
           <Routes>
-              <Route path = "Home" element={<Home />}/>
-              <Route path ='/' element={<RandomGame />}/>
+              <Route path = '/' element={<Home />}/>
+              <Route path = 'RandomGame' element={<RandomGame />}/>
+              {/* <Route path = 'GameListPage' element={<GameListPage />}/> */}
           </Routes>
       </Router>
     </div>
