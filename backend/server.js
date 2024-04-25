@@ -3,15 +3,24 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 require('dotenv').config({path: '.env'});
 const app = express()
-const game = require('./routes/game')
+const Game = require('./routes/game')
+const axios = require('axios')
+
+
 
 
 //middlewares
-app.use(cors());
+// app.use(cors({
+//     origin: 'http://localhost:8080', // Allow requests from your React app domain
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+//     credentials: true // Allow cookies to be sent across origins
+// }));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-app.use('/games', game)
+
+
+app.use('/games', Game)
 // app.use('/reivews', review)
 // app.use('/comments', comment)
 

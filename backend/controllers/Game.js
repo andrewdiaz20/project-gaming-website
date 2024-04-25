@@ -45,10 +45,24 @@ async function updateGame(req, res) {
     }
 }
 
+async function GameApi(req,res) {
+    try {
+        const searchTerm = req.body.search;
+        const games = await Game.find({
+            name: { $regex: searchTerm, $options: 'i' }  // 'i' for case insensitive
+        })
+        res.json(games)
+    } catch (error) {
+        console.error('Error searching games', error);
+        res.status(500).json({message: 'Error searching games'})
+    }
+}
+
 module.exports = {
     getAllGames,
     getGameById,
     createGame,
     updateGame,
+    GameApi
     
 }
