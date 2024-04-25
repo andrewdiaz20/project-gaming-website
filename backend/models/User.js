@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const UserSchema = new mongoose.Schema({
     userid: {
         type: integer
-    }
+    },
     username: {
         type: String,
         required:true
