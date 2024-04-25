@@ -33,8 +33,8 @@ function Login({login}) {
     }
     return (
         <div>
-            <h1>Login</h1>
-            <form onSubmit={handleSubmit}>
+            <h1 class="LoginTitle">Login</h1>
+            <form class="SubmitButton" onSubmit={handleSubmit}>
                 <label>
                     Email:
                     <input
@@ -53,7 +53,7 @@ function Login({login}) {
             </form>
             {error && <p>{error}</p>}
 
-            <div>
+            <div class="loginlinks">
                 <button onClick={() => login()}>Login with Google</button>
                 <button onClick={() => login()}>Login with Facebook</button>
                 <button onClick={() => login()}>Login with GitHub</button>
@@ -64,6 +64,7 @@ function Login({login}) {
             <div>
                 <a href='#' onClick={(e) => navigate('/signup')}>Create a new account</a>
             </div>
+            <footer>This is for the bottom</footer>
         </div>
     )
 }
