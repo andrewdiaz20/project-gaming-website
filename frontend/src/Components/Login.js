@@ -34,6 +34,14 @@ function Login({login}) {
     return (
         <div>
             <h1 class="LoginTitle">Login</h1>
+            <nav class="navbar">
+                <ul class="navbar">
+                    <li><a>Search</a></li>
+                    <li><a href='GameListPage'>My Games</a></li>
+                    <li><a href='/'>Home</a></li>
+                    <li><a class="item2">Profile</a></li>
+                </ul>
+            </nav>
             <form class="SubmitButton" onSubmit={handleSubmit}>
                 <label>
                     Email:
@@ -62,7 +70,7 @@ function Login({login}) {
             </div>
 
             <div>
-                <a href='#' onClick={(e) => navigate('/signup')}>Create a new account</a>
+                <a class="create-a-new-account" href='#' onClick={(e) => navigate('/signup')}>Create a new account</a>
             </div>
             <footer>This is for the bottom</footer>
         </div>
