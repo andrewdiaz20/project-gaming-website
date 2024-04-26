@@ -3,7 +3,7 @@ const User = require('../models/User')
 const app = require('../express')
 const jwt = require('jsonwebtoken')
 
-const JWT_SECRET = 'secret'
+const JWT_SECRET = 'qwertyuiopasdfghjklzxcvbnm'
 
 async function signUp(req, res) {
     const { name: { firstName, lastName }, username, email, password } = req.body;
@@ -29,17 +29,14 @@ async function login(req, res) {
     if (!user) {
         res.json({ success: false, message: 'User not found' });
     }
-    // check if password is correct
-    const passwordMatch = await bcrypt.compare(password, user.password);
-    if (!passwordMatch) {
-        res.json({ success: false, message: 'Incorrect password' });
+    //check if password is equal to user password
+    if (await bcrypt.compare(password, user.password)) {
+        const token = jwt.sign({}, JWT_SECRET, { expiresIn: '1h' });
+        
+        return res.json({ success: true, token });
     } else {
-        const payload = { username };
-        const token = jwt.sign(payload, 'secret', { expiresIn: '1h' });
-        res.json({ success: true, token });
+        return res.status(401).json({ success: false, message: 'Invalid username or password' });
     }
-
-    return res;
 }
 
 module.exports = { signUp, login }

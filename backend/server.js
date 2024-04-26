@@ -1,7 +1,9 @@
 const express = require('express')
 const cors = require('cors')
+const bcrypt = require('bcrypt')
 const mongoose = require('mongoose')
-require('dotenv').config({path: '.env'});
+require('dotenv').config({ path: '.env' });
+const user = require('./routes/user')
 const app = express()
 const game = require('./routes/game')
 
@@ -9,8 +11,10 @@ const game = require('./routes/game')
 //middlewares
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 
+
+app.use('/api/user', user)
 app.use('/games', game)
 // app.use('/reivews', review)
 // app.use('/comments', comment)
