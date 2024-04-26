@@ -22,31 +22,34 @@ function SignUp(props) {
                 'Content-Type': 'application/json' // Set to 'application/json'
             },
             body: JSON.stringify({
-                username: userName,
-                firstName: firstName,
-                lastName: lastName
+                name: {
+                    firstName: firstName,
+                    lastName: lastName
+                },
+                userName,
+                email,
+                password,
             }),
-            email,
-            password,
-        }),
-        .then((resp) => {
-            if (!resp.ok) {
-                //If the response status code is not OK, throw an error to catch it later
-                throw new Error('Network response was not ok');
-            }
-            return resp.json(); //Parse JSON only if the response status code is OK
         })
-        .then((data)) => {
-            if (data.status === 'ok') {
-                alert(data.error);
-            } else {
-                alert('Registration successful');
-            }
-        })
-        .catch((err) => {
-            console.error(err);
-            alert('An error occurred during registration');
+            .then((resp) => {
+                if (!resp.ok) {
+                    //If the response status code is not OK, throw an error to catch it later
+                    throw new Error('Network response was not ok');
+                }
+                return resp.json(); //Parse JSON only if the response status code is OK
+            })
+            .then((data)) => {
+        if (data.error) {
+            alert(data.error);
+        } else {
+            alert('Registration successful');
+        }
+    }
+        .catch ((err) => {
+        console.error(err);
+        alert('An error occurred during registration');
     });
+}
     
     return (
         <div className={'mainContainer'}>
