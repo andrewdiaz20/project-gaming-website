@@ -55,6 +55,7 @@ function Login({login}) {
     };
 
     return (
+<<<<<<< HEAD
         <div className={'mainContainer'}>
             <div className={'titleContainer'}>
                 <h1 class="LoginTitle">Login</h1>
@@ -62,6 +63,21 @@ function Login({login}) {
             <br />
             <form onSubmit={handleSubmit}>
                 <div className={'inputContainer'}>
+=======
+        <div>
+            <h1 class="LoginTitle">Login</h1>
+            <nav class="navbar">
+                <ul class="navbar">
+                    <li><a>Search</a></li>
+                    <li><a href='GameListPage'>My Games</a></li>
+                    <li><a href='/'>Home</a></li>
+                    <li><a class="item2">Profile</a></li>
+                </ul>
+            </nav>
+            <form class="SubmitButton" onSubmit={handleSubmit}>
+                <label>
+                    Email:
+>>>>>>> e8ef942e27d51688fa2d0466ddab0e69c0e1bcd5
                     <input
                         value={email}
                         placeholder='Enter your email here'
@@ -101,10 +117,18 @@ function Login({login}) {
                     <button onClick={() => login()}>Login with LinkedIn</button>
             </div>
 
+<<<<<<< HEAD
             
                 <footer>This is for the bottom</footer>
          </form>
         </div>  
+=======
+            <div>
+                <a class="create-a-new-account" href='#' onClick={(e) => navigate('/signup')}>Create a new account</a>
+            </div>
+            <footer>This is for the bottom</footer>
+        </div>
+>>>>>>> e8ef942e27d51688fa2d0466ddab0e69c0e1bcd5
     )
 }
 
