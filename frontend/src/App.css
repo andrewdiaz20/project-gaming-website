@@ -79,6 +79,8 @@ footer{
 input{
   display: flex;
   flex-direction: row;
+  margin-right: 1vh;
+  list-style-type: none;
 }
 
 /* label{
@@ -92,10 +94,10 @@ form{
   flex-direction: row;
   flex-wrap: wrap;
   margin: auto;
-  border: 3px solid #1b1b1b;
+  border: 3px rgba(0,0,0,0.5);
   margin-left: 15vh;
-  padding-left: 15vh;
-  padding-right: 19vh;
+  padding-left: 9vh;
+  padding-right: 9vh;
   padding-top: 3vh;
   padding-bottom: 3vh;
   background-color: rgba(0,0,0,0.5);
@@ -106,5 +108,11 @@ form{
   position: fixed;
   top: 50vh;
   margin: auto;
+  padding-left: 15vh;
+}
+
+.create-a-new-account{
+  position: fixed;
+  top: 45vh;
   padding-left: 15vh;
 }
