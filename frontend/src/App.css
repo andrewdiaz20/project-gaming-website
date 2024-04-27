@@ -96,7 +96,7 @@ form{
   flex-wrap: wrap;
   margin: auto;
   border: 3px rgba(0,0,0,0.5);
-  margin-left: 15vh;
+  margin-left: 14vh;
   padding-left: 9vh;
   padding-right: 9vh;
   padding-top: 3vh;
@@ -110,12 +110,16 @@ form{
   top: 50vh;
   margin: auto;
   padding-left: 15vh;
+  display: flex;
 }
 
 .create-a-new-account{
   position: fixed;
   top: 45vh;
   padding-left: 15vh;
+  list-style-type: none;
+  text-decoration: none;
+  color: #1b1b1b;
 }
 
 .navbarlogin{
@@ -130,4 +134,26 @@ form{
   justify-content: space-between;
   top: 15vh;
   padding-right: 5vh; */
+}
+
+.SubmitButton{
+  position: fixed;
+  top: 28vh;
+  margin-left: 0vh;
+  padding-right:vh;
+  border: 3px #1b1b1b;
+  font-size: 2vh;
+}
+
+.loginbuttons{
+  list-style-type: none;
+  text-decoration: none;
+}
+
+button{
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
 }

@@ -25,12 +25,12 @@ function Login({ login }) {
                     <li><a class="item2">Profile</a></li>
                 </ul>
             </nav>
-            <form class="SubmitButton" onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <label>
-                    Email:
+                <h1 class="SubmitButton" >Login:
+                </h1>
                     <div className={'mainContainer'}>
                         <div className={'titleContainer'}>
-                            <h1>Login</h1>
                         </div>
                         <br />
                         <form onSubmit={handleSubmit}>
@@ -67,15 +67,15 @@ function Login({ login }) {
             </div>
 
             <div class="loginlinks">
-                <button onClick={() => login()}>Login with Google</button>
+                <button class="loginbuttons"onClick={() => login()}>Login with Google</button>
                 <br />
-                <button onClick={() => login()}>Login with Facebook</button>
+                <button class="loginbuttons"onClick={() => login()}>Login with Facebook</button>
                 <br />
-                <button onClick={() => login()}>Login with GitHub</button>
+                <button class="loginbuttons"onClick={() => login()}>Login with GitHub</button>
                 <br />
-                <button onClick={() => login()}>Login with Twitter</button>
+                <button class="loginbuttons"onClick={() => login()}>Login with Twitter</button>
                 <br />
-                <button onClick={() => login()}>Login with LinkedIn</button>
+                <button class="loginbuttons"onClick={() => login()}>Login with LinkedIn</button>
             </div>
 
             <div>
