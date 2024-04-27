@@ -6,29 +6,28 @@ import Home from './Components/Home';
 import Login from './Components/Login'
 import SignUp from './Components/Signup';
 import UserPage from './Components/UserPage';
-import GameListPage from './Components/GameListPage'
+// import GameListPage from './Components/GameListPage'
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
+  // const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
 
-  const logout = () => {
-    localStorage.removeItem('isLoggedIn');
-    setIsLoggedIn(false);
-  }
+  // const logout = () => {
+  //   localStorage.removeItem('isLoggedIn');
+  //   setIsLoggedIn(false);
+  // }
 
-  const login = () => {
-    localStorage.setItem('isLoggedIn', 'true');
-    setIsLoggedIn(true);
-  };
+  // const login = () => {
+  //   localStorage.setItem('isLoggedIn', 'true');
+  //   setIsLoggedIn(true);
+  // };
 
-  useEffect(() => {
-    setIsLoggedIn(localStorage.getItem('isLoggedIn') === 'true');
-  }, []);
+  // useEffect(() => {
+  //   setIsLoggedIn(localStorage.getItem('isLoggedIn') === 'true');
+  // }, []);
 
   return (
     <div className='mainpage'>
       <Router>
-        <Navigation />
           <Routes>
               <Route path = '/' element={<Home />}/>
               <Route path = 'RandomGame' element={<RandomGame />}/>
@@ -36,7 +35,6 @@ function App() {
           <Route path='Login' element={<Login />} />
           <Route path='SignUp' element={<SignUp />} />
           <Route path = 'UserPage' element={<UserPage/>}/>
-              <Route path = 'GameListPage' element={<GameListPage/>}/>
           </Routes>
       </Router>
     </div>
