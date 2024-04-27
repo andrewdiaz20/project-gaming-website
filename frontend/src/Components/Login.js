@@ -11,47 +11,47 @@ function Login({login}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        loginUser = ({ email, password }) 
+        loginUser({ email, password }) 
     }
 
 
     const loginUser = ({email, password}) => {
+        navigate('/userpage');
+        // console.log(JSON.stringify({ email, password }));
 
-        console.log(JSON.stringify({ email, password }));
-
-        fetch('${process.env.REACT_APP_BACKEND_URL}/api/user/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json' // Set to 'application/json'
-            },
-            body: JSON.stringify({ email, password }),
-        })
-            .then((resp) => {
-                console.log(resp);
-                if (!resp.ok) {
-                    //If the response status code is not OK, throw an error to catch it later
-                    throw new Error('Network response was not ok');
-                }
-                return resp.json(); //Parse JSON only if the response status code is OK
-            })
-            .then((data) => {
-                console.log(data);
-                if (data.error) {
-                    alert(data.error);
-                } else {
-                    alert('Login successful');
-                    //If the login was successful, set the token in local storage
+        // fetch('${process.env.REACT_APP_BACKEND_URL}/api/user/login', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json' // Set to 'application/json'
+        //     },
+        //     body: JSON.stringify({ email, password }),
+        // })
+        //     .then((resp) => {
+        //         console.log(resp);
+        //         if (!resp.ok) {
+        //             //If the response status code is not OK, throw an error to catch it later
+        //             throw new Error('Network response was not ok');
+        //         }
+        //         return resp.json(); //Parse JSON only if the response status code is OK
+        //     })
+        //     .then((data) => {
+        //         console.log(data);
+        //         if (data.error) {
+        //             alert(data.error);
+        //         } else {
+        //             alert('Login successful');
+        //             //If the login was successful, set the token in local storage
                     
 
-                    login();
-                    console.log('token from storage', localStorage.getItem('token'));
-                    navigate('/profile');
-                }
-            })
-            .catch((err) => {
-                console.error(err);
-                alert('An error occurred:');
-            });
+        //             login();
+        //             console.log('token from storage', localStorage.getItem('token'));
+        //             navigate('/userpage');
+        //         }
+        //     })
+        //     .catch((err) => {
+        //         console.error(err);
+        //         alert('An error occurred:');
+        //     });
     };
 
     return (
@@ -66,16 +66,16 @@ function Login({login}) {
                         value={email}
                         placeholder='Enter your email here'
                         onChange={(ev) => setEmail(ev.target.value)}
-                        className='inputBox' /> 
+                        className='inputBox' />
                     <label className='errorLabel'>{emailError}</label>
                 </div>
-                <br/>
+                <br />
                 <div className={'inputContainer'}>
                     <input
                         value={password}
                         placeholder='Enter your password here'
                         onChange={(ev) => setPassword(ev.target.value)}
-                        className='inputBox'/>
+                        className='inputBox' />
                     <label className='errorLabel'>{passwordError}</label>
                 </div>
                 <div className={'inputContainer'}>
@@ -89,7 +89,7 @@ function Login({login}) {
                     <a href='#' onClick={(e) => { navigate('/signup') }}>Create a new account</a>
                 </div>
 
-            <div class="loginlinks">
+                <div class="loginlinks">
                     <button onClick={() => login()}>Login with Google</button>
                     <br />
                     <button onClick={() => login()}>Login with Facebook</button>
@@ -99,14 +99,14 @@ function Login({login}) {
                     <button onClick={() => login()}>Login with Twitter</button>
                     <br />
                     <button onClick={() => login()}>Login with LinkedIn</button>
-            </div>
+                </div>
 
-            <div>
-                <a class="create-a-new-account" href='#' onClick={(e) => navigate('/signup')}>Create a new account</a>
-            </div>
-            <footer>This is for the bottom</footer>
+                <div>
+                    <a class="create-a-new-account" href='#' onClick={(e) => navigate('/signup')}>Create a new account</a>
+                </div>
+                </form>
         </div>
-    )
-}
+    );
+};
 
 export default Login;

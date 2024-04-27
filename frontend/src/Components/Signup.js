@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function SignUp(props) {
-    const [username, setUserName] = useState('');
+    const [userName, setUserName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [firstName, setFirstName] = useState('');
@@ -38,13 +38,13 @@ function SignUp(props) {
                 }
                 return resp.json(); //Parse JSON only if the response status code is OK
             })
-            .then((data)) => {
+            .then((data) => {
         if (data.error) {
             alert(data.error);
         } else {
             alert('Registration successful');
         }
-    }
+    })
         .catch ((err) => {
         console.error(err);
         alert('An error occurred during registration');
@@ -61,9 +61,9 @@ function SignUp(props) {
                 <div className={'inputContainer'}>
                     <input
                         type="text"
-                        placeholder="User Name"
+                        placeholder="userName"
                         value={userName}
-                        onChange={(ev) => setUsername(ev.target.value)}
+                        onChange={(ev) => setUserName(ev.target.value)}
                         className='inputBox' />
                 </div>
                 <div className={'inputContainer'}>
