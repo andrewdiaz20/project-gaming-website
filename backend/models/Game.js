@@ -1,32 +1,32 @@
 const mongoose = require('mongoose')
 
-const GameSchema = new mongoose.Schema({
-    game_name: {
+const VideoGamesSchema = new mongoose.Schema({
+    VideoGames_name: {
         type: String,
         required:true
     },
-    game_picture: {
+    VideoGames_picture: {
         type: String,
         required:true,
         default: ""
     },
-    game_genre: {
+    VideoGames_genre: {
         type: String,
         required:true
     },
-    game_description: {
+    VideoGames_description: {
         type: String,
         required:true
     },
-    game_release_date: {
+    VideoGames_release_date: {
         type: String,
         required:true
     },
-    game_rating: {
+    VideoGames_rating: {
         type: String,
         required:true
     },
 
 })
 
-module.exports = mongoose.model('VideoGames',GameSchema)
+module.exports = mongoose.model('VideoGames',VideoGamesSchema)

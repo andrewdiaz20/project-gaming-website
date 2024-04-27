@@ -1,44 +1,44 @@
-const Game = require('../models/Game')
+const VideoGames = require('../models/Game')
 
-async function getAllGames(req, res){
+async function getAllVideoGamess(req, res){
     try {
-        const game= await Game.find()
-        res.json(game)
+        const VideoGames= await VideoGames.find()
+        res.json(VideoGames)
     } catch (error){
-        console.log('error getting all games', error)
+        console.log('error getting all VideoGamess', error)
         res.status(500).json({message: `error fetching all foods`})
     }
 }
 
-async function getGameById(req,res){
+async function getVideoGamesById(req,res){
     try{
         const { id } = req.params
-        const game = await Game.findById(id)
-        res.json(game)
+        const VideoGames = await VideoGames.findById(id)
+        res.json(VideoGames)
     } catch (error) {
-        console.log('error fetching game by id  ', error)
+        console.log('error fetching VideoGames by id  ', error)
         res.status(500).json({message: 'error fetching food'})
     }
 }
 
-async function createGame(req, res) {
+async function createVideoGames(req, res) {
     try{
-        if(!req.body.game_picture) req.body.profilePicture = undefined
-        const game = await new Game(req.body).save()
-        res.status(201).json(game)
+        if(!req.body.VideoGames_picture) req.body.profilePicture = undefined
+        const VideoGames = await new VideoGames(req.body).save()
+        res.status(201).json(VideoGames)
     } catch (error) {
-        console.log('error creating game', error)
+        console.log('error creating VideoGames', error)
         res.status(500).json({message: 'error creating food'})
     }
 }
 
-//update route, figure out how to add authentication for user changing their own game and admin for page info 
-async function updateGame(req, res) {
+//update route, figure out how to add authentication for user changing their own VideoGames and admin for page info 
+async function updateVideoGames(req, res) {
     try {
         const { id } = req.params;
         const updateData = req.body;
-        const game = await Game.findByIdAndUpdate(id, updateData, {new: true})
-        res.json(game)
+        const VideoGames = await VideoGames.findByIdAndUpdate(id, updateData, {new: true})
+        res.json(VideoGames)
     } catch (error) {
         console.log('error updating food', error)
         res.status(500).json({message: 'error updating food'})
@@ -46,9 +46,9 @@ async function updateGame(req, res) {
 }
 
 module.exports = {
-    getAllGames,
-    getGameById,
-    createGame,
-    updateGame,
+    getAllVideoGamess,
+    getVideoGamesById,
+    createVideoGames,
+    updateVideoGames,
     
 }
