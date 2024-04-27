@@ -1,7 +1,8 @@
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-
-function Signup() {
-    const [username, setUsername] = useState('');
+function SignUp(props) {
+    const [userName, setUserName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [firstName, setFirstName] = useState('');
@@ -15,27 +16,29 @@ function Signup() {
     }
 
     const signup = () => {
-        fetch('http://localhost:5000/signup', {
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/api/user/signup`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json' // Set to 'application/json'
             },
             body: JSON.stringify({
-                username: username,
-                email: email,
-                password: password,
-                firstName: firstName,
-                lastName: lastName
+                name: {
+                    firstName: firstName,
+                    lastName: lastName
+                },
+                userName,
+                email,
+                password,
             }),
         })
             .then((response) => response.json())
-            .then(data) => {
+            .then((data) => {
         if (data.status === 'ok') {
             navigate('/login');
         } else {
             alert(data.error);
         }
-    }
+    })
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -105,4 +108,4 @@ function Signup() {
 }
 }
 
-export default Signup;
+export default SignUp;

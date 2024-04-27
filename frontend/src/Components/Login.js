@@ -1,36 +1,19 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function Login({login}) {
+function Login({ login }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
-    const [loggedIn, setLoggedIn] = useState(false);
+    const [emailError, setEmailError] = useState('');
+    const [passwordError, setPasswordError] = useState('');
 
     const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        loginUser = ({ email, password }) 
+        loginUser({ email, password })
     }
 
-
-    const loginUser = async (user) => {
-        const response = await fetch('http://localhost:5000/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(user),
-        });
-        const data = await response.json();
-        if (data.status === 'ok') {
-            setLoggedIn(true);
-            navigate('/profile');
-        } else {
-            setError(data.error);
-        }
-    }
     return (
         <div>
             <h1 class="LoginTitle">Login</h1>
@@ -45,36 +28,65 @@ function Login({login}) {
             <form class="SubmitButton" onSubmit={handleSubmit}>
                 <label>
                     Email:
-                    <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)} />
+                    <div className={'mainContainer'}>
+                        <div className={'titleContainer'}>
+                            <h1 class="LoginTitle">Login</h1>
+                        </div>
+                        <br />
+                        <form onSubmit={handleSubmit}>
+                            <div className={'inputContainer'}>
+                                <input
+                                    value={email}
+                                    placeholder='Enter your email here'
+                                    onChange={(ev) => setEmail(ev.target.value)}
+                                    className='inputBox' />
+                                <label className='errorLabel'>{emailError}</label>
+                            </div>
+                            <br />
+                            <div className={'inputContainer'}>
+                                <input
+                                    value={password}
+                                    placeholder='Enter your password here'
+                                    onChange={(ev) => setPassword(ev.target.value)}
+                                    className='inputBox' />
+                                <label className='errorLabel'>{passwordError}</label>
+                            </div>
+                            <div className={'inputContainer'}>
+                                <input
+                                    type='submit'
+                                    value='Login'
+                                    className='inputButton' />
+                            </div>
+                        </form>
+                        </div>
                 </label>
-                <label>
-                    Password:
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)} />
-                </label>
-                <button type="submit">Login</button>
             </form>
-            {error && <p>{error}</p>}
+
+            <div class="inputContainer">
+                <a href='#' onClick={(e) => { navigate('/signup') }}>Create a new account</a>
+            </div>
 
             <div class="loginlinks">
                 <button onClick={() => login()}>Login with Google</button>
+                <br />
                 <button onClick={() => login()}>Login with Facebook</button>
+                <br />
                 <button onClick={() => login()}>Login with GitHub</button>
+                <br />
                 <button onClick={() => login()}>Login with Twitter</button>
+                <br />
                 <button onClick={() => login()}>Login with LinkedIn</button>
             </div>
 
             <div>
                 <a class="create-a-new-account" href='#' onClick={(e) => navigate('/signup')}>Create a new account</a>
             </div>
-            <footer>This is for the bottom</footer>
         </div>
-    )
-}
 
-export default Login;
+
+    )
+};
+
+
+
+export default Login
