@@ -10,7 +10,7 @@ function Home() {
     return (
         <main>
             <div class="HomeTitle">
-                <h1>GameGlanceGiggles</h1>
+                <h1>GameGlance</h1>
             </div>
             <div>
                 <nav class="navbar">
