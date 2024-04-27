@@ -74,6 +74,7 @@ footer{
   position: fixed;
   margin: auto;
   padding-right: 100%;
+  padding-bottom: 5vh;
 }
 
 input{
@@ -115,4 +116,18 @@ form{
   position: fixed;
   top: 45vh;
   padding-left: 15vh;
+}
+
+.navbarlogin{
+  top: 10vh;
+  display: flex;
+  position: fixed;
+  /* flex-wrap: wrap;
+  position: fixed;
+  flex-direction: row;
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+  top: 15vh;
+  padding-right: 5vh; */
 }

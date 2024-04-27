@@ -1,6 +1,9 @@
 import React from "react"
 import { useState, useEffect } from 'react'
 import App from "../App"
+import navbar from "../Navigation"
+import { useNavigate } from "react-router-dom";
+
 
 
 function Home() {
@@ -9,16 +12,17 @@ function Home() {
             <div class="HomeTitle">
                 <h1>GameGlanceGiggles</h1>
             </div>
-            <nav class="navbar">
-                <ul class="navbar">
-                    <li><a>Search</a></li>
-                    <li><a href='GameListPage'>My Games</a></li>
-                    <li><a href='Login'>Login</a></li>
-                    <li><a class="item2">Profile</a></li>
-                </ul>
-            </nav>
             <div>
-                Gameinfoinhere
+                <nav class="navbar">
+                    <ul class="navbar">
+                        <li><a>Search</a></li>
+                        <li><a href='GameListPage'>My Games</a></li>
+                        <li><a href='Login'>Login</a></li>
+                        <li><a class="item2">Profile</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
             </div>
             <div></div>
             <footer>UnknownInfoInHere</footer>

@@ -4,19 +4,19 @@ import './App.css';
 import RandomGame from './Components/RandomGame';
 import Home from './Components/Home';
 import Login from './Components/Login'
-import GameListPage from './Components/GameListPage'
+import GameList from './Components/GameList'
+import Navigation from './Navigation';
 
 function App(){
-
   return (
     <div>
       <Router>
+        <Navigation />
           <Routes>
               <Route path = '/' element={<Home />}/>
               <Route path = 'RandomGame' element={<RandomGame />}/>
-              {/* <Route path = 'GameListPage' element={<GameListPage />}/> */}
+              <Route path = 'GameList' element={<GameList />}/>
               <Route path = 'Login' element={<Login/>}/>
-              <Route path = 'GameListPage' element={<GameListPage/>}/>
           </Routes>
       </Router>
     </div>

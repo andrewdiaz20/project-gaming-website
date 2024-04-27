@@ -34,8 +34,8 @@ function Login({login}) {
     return (
         <div>
             <h1 class="LoginTitle">Login</h1>
-            <nav class="navbar">
-                <ul class="navbar">
+            <nav class="navbarlogin">
+                <ul class="navbarlogin">
                     <li><a>Search</a></li>
                     <li><a href='GameListPage'>My Games</a></li>
                     <li><a href='/'>Home</a></li>
