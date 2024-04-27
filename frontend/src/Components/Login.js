@@ -11,7 +11,7 @@ function Login({ login }) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        loginUser({ email, password })
+        Login({ email, password })
     }
 
     return (
@@ -30,7 +30,7 @@ function Login({ login }) {
                     Email:
                     <div className={'mainContainer'}>
                         <div className={'titleContainer'}>
-                            <h1 class="LoginTitle">Login</h1>
+                            <h1>Login</h1>
                         </div>
                         <br />
                         <form onSubmit={handleSubmit}>
@@ -81,6 +81,7 @@ function Login({ login }) {
             <div>
                 <a class="create-a-new-account" href='#' onClick={(e) => navigate('/signup')}>Create a new account</a>
             </div>
+            <footer></footer>
         </div>
 
 
