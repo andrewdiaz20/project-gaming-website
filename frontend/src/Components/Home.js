@@ -15,7 +15,7 @@ function Home() {
                 <nav class="navbar">
                     <ul class="navbar">
                         <li><a>Search</a></li>
-                        <li><a href='GameListPage'>My Games</a></li>
+                        <li><a href='GameList'>My Games</a></li>
                         <li><a href='Login'>Login</a></li>
                         <li><a class="item2">Profile</a></li>
                     </ul>
@@ -24,7 +24,7 @@ function Home() {
             <div>
             </div>
             <div></div>
-            <footer>UnknownInfoInHere</footer>
+            <footer></footer>
         </main>
     )
 }
