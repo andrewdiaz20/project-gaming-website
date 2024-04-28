@@ -11,7 +11,9 @@ function Home() {
                 <h1>GameGlance</h1>
             </div>
             <div>
+                <img class='homescreenbackground'src="video-games-collage-wide-2048x1152.jpg" alt="multiple-game-picture"></img>
             </div>
+    
             <footer></footer>
         </main>
     )
