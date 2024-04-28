@@ -1,8 +1,7 @@
 import React from "react"
 import { useState, useEffect } from 'react'
 import App from "../App"
-import navbar from "../Navigation"
-import { useNavigate } from "react-router-dom";
+import Navbar from './Navigation'
 
 
 

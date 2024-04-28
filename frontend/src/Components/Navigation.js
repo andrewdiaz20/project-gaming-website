@@ -1,10 +1,10 @@
 import React from "react"
 import { Link, useNavigate } from "react-router-dom";
 
-function navbar() {
+function Navbar() {
     <div>
-        <nav class="navbar">
-            <ul class="navbar">
+        <nav class="Navbar">
+            <ul class="Navbar">
                 <li><a>Search</a></li>
                 <li><a href='GameListPage'>My Games</a></li>
                 <li><a href='Login'>Login</a></li>
@@ -14,4 +14,4 @@ function navbar() {
     </div>
 }
 
-export default navbar
+export default Navbar
