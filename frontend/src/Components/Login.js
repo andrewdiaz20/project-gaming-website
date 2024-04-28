@@ -17,14 +17,6 @@ function Login({ login }) {
     return (
         <div>
             <h1 class="LoginTitle">Login</h1>
-            <nav class="navbarlogin">
-                <ul class="navbarlogin">
-                    <li><a>Search</a></li>
-                    <li><a href='GameListPage'>My Games</a></li>
-                    <li><a href='/'>Home</a></li>
-                    <li><a class="item2">Profile</a></li>
-                </ul>
-            </nav>
             <form onSubmit={handleSubmit}>
                 <label>
                 <h1 class="SubmitButton" >Login:
