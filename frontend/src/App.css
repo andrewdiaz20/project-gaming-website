@@ -13,7 +13,7 @@
 }
 
 /* css for the navbar */
-.Navbar{
+.navbar{
   top: 14vh;
   display: flex;
   position: fixed;
@@ -25,6 +25,90 @@
   justify-content: space-between;
   top: 15vh;
   padding-right: 5vh; */
+
+}
+
+ul{
+  flex: auto;
+  list-style-type: none;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+/* home nav bar buttons*/
+li a {
+  border-radius: 1em;
+  text-decoration: none;
+  border: 3px solid #D3D3D3;
+  padding-left: 3em;
+  padding-right: 3em;
+  color: #D3D3D3;
+  margin-left: 10vh;
+  display:flex;
+}
+
+footer{
+  border-radius: 1em;
+  color:#1b1b1b;
+  bottom: 0;
+  border: 3px solid #1b1b1b;
+  background-color: #1b1b1b;
+  padding-top: 0%;
+  padding-right: 100%;
+  padding-bottom: 18vh;
+  /* margin-bottom: 0%; */
+  position: fixed;
+  bottom: 0;
+}
+
+/* Login.js */
+.LoginTitle{
+  color: aqua;
+  border: 1px solid #1b1b1b;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #1b1b1b;
+  font-stretch: 100%;
+  font-family: cursive;
+  padding-left: 1em;
+  margin-top: 0%;
+  position: fixed;
+  margin: auto;
+  padding-right: 100%;
+}
+
+/* input{
+  display: flex;
+  flex-direction: row;
+} */
+
+/* label{
+  
+} */
+
+form{
+  top: 27vh;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  border: 3px solid #1b1b1b;
+  margin-left: 15vh;
+  padding-left: 15vh;
+  padding-right: 19vh;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 12px;
+}
+
+.loginlinks{
+  position: fixed;
+  top: 50vh;
+  margin: auto;
+  padding-left: 15vh;
+
 }
 
 ul{
@@ -184,4 +268,5 @@ a:hover{
   font-family: cursive;
   padding-left: 8vh;
   padding-right: 100%;
+
 }

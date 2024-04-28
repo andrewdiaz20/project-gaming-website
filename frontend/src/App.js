@@ -4,10 +4,12 @@ import './App.css';
 import RandomGame from './Components/RandomGame';
 import Home from './Components/Home';
 import Login from './Components/Login'
+import GameListPage from './Components/GameListPage'
 import SignUp from './Components/Signup';
 import UserPage from './Components/UserPage';
 import Navbar from './Components/Navigation';
 import GameList from './Components/GameList';
+
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
@@ -28,9 +30,9 @@ function App() {
 
   return (
     <div className='mainpage'>
-      <Navbar />
       <Router>
-        <Routes>
+    <Home/>
+       <Routes>
           <Route path='/' element={<Home />} />
           <Route path='RandomGame' element={<RandomGame />} />
           <Route path='GameList' element={<GameList />} />
@@ -38,6 +40,7 @@ function App() {
           <Route path='SignUp' element={<SignUp />} />
           <Route path='UserPage' element={<UserPage />} />
         </Routes>
+
       </Router>
     </div>
   )
