@@ -83,6 +83,5 @@ const GameList = () => {
             </div>
         </main>
     )
+    )
 }
-
-export default GameList;
