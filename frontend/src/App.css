@@ -1,11 +1,11 @@
 .HomeTitle{
-  color: aqua;
+  color: #FFEEF2;
   position: fixed;
   top: 0;
-  border: 1px solid #1b1b1b;
+  border: 1px solid #8D5DF5;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
-  background-color: #1b1b1b;
+  background-color: #8D5DF5;
   font-stretch: 100%;
   font-family: cursive;
   padding-left: 1em;
@@ -25,6 +25,7 @@
   justify-content: space-between;
   top: 15vh;
   padding-right: 5vh; */
+
 }
 
 ul{
@@ -107,4 +108,165 @@ form{
   top: 50vh;
   margin: auto;
   padding-left: 15vh;
+
+}
+
+ul{
+  flex: auto;
+  list-style-type: none;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+/* home nav bar buttons*/
+li a {
+  border-radius: 1em;
+  text-decoration: none;
+  border: 3px solid #595758;
+  padding-left: 3em;
+  padding-right: 3em;
+  color: #595758;
+  margin-left: 10vh;
+  display:flex;
+}
+
+footer{
+  border-radius: 1em;
+  color:#1b1b1b;
+  bottom: 0;
+  border: 3px solid #8D5DF5;
+  background-color: #8D5DF5;
+  padding-top: 0%;
+  padding-right: 100%;
+  padding-bottom: 18vh;
+  /* margin-bottom: 0%; */
+  position: fixed;
+  bottom: 0;
+}
+
+/* Login.js */
+.LoginTitle{
+  color:#FFEEF2;
+  border: 1px solid  #8D5DF5;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #8D5DF5;
+  font-stretch: 100%;
+  font-family: cursive;
+  padding-left: 1em;
+  margin-top: 0%;
+  position: fixed;
+  margin: auto;
+  padding-right: 100%;
+  padding-bottom: 5vh;
+  padding-top: 1vh;
+}
+
+input{
+  display: flex;
+  flex-direction: row;
+  margin-right: 1vh;
+  list-style-type: none;
+}
+
+/* label{
+  
+} */
+
+form{
+  top: 27vh;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  border: 3px rgba(0,0,0,0.5);
+  margin-left: 14vh;
+  padding-left: 9vh;
+  padding-right: 9vh;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 12px;
+}
+
+.loginlinks{
+  position: fixed;
+  top: 50vh;
+  margin: auto;
+  padding-left: 15vh;
+  display: flex;
+}
+
+.create-a-new-account{
+  position: fixed;
+  top: 45vh;
+  padding-left: 5vh;
+  list-style-type: none;
+  text-decoration: none;
+  color: #1b1b1b;
+}
+
+.navbarlogin{
+  top: 10vh;
+  display: flex;
+  position: fixed;
+  /* flex-wrap: wrap;
+  position: fixed;
+  flex-direction: row;
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+  top: 15vh;
+  padding-right: 5vh; */
+}
+
+.SubmitButton{
+  position: fixed;
+  top: 28vh;
+  margin-left: 0vh;
+  padding-right:vh;
+  border: 3px #1b1b1b;
+  font-size: 2vh;
+}
+
+.loginbuttons{
+  list-style-type: none;
+  text-decoration: none;
+}
+
+button{
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+/* gameList */
+.card{
+  color: #420098;
+  margin-left: 1cqw;
+  margin-top: 25vh;
+  margin-right: 150vh;
+  background-color: #FFE4F3;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.GameListT{
+  color: #FFEEF2;
+  position: fixed;
+  top: 0;
+  border: 1px solid #8D5DF5;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #8D5DF5;
+  font-stretch: 100%;
+  font-family: cursive;
+  padding-left: 8vh;
+  padding-right: 100%;
+
 }

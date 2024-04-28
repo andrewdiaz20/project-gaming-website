@@ -2,17 +2,17 @@
 const router = require ('express').Router()
 
 const {
-    getAllGames,
-    getGameById,
-    createGame,
-    updateGame,
+    get10Games,
+    SearchResults,
+    SearchResultsArtWork,
 } = require('../controllers/Game')
 
-//get all Games
-router.get('/all', getAllGames)
-//get Games by Id
-router.get('/:id', getGameById)
-//create new Food
-router.post('/', createGame)
+//get 10 Games
+router.post('/get10', get10Games)
+//Artwork
+router.post('/art', SearchResultsArtWork)
+//get SearchResults
+router.post('/search', SearchResults)
+
 
 module.exports = router
