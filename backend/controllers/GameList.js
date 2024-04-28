@@ -8,10 +8,12 @@ router.post('/', async(req, res) => {
         req.body.pic = ""
     }
     if(!req.body.Game){
+
         req.body.Game = "Game?"
     }
     if(!req.body.description){
         req.body.description = "Game?"
+
     }
     const GameList = await GameList.create(req.body)
     res.json(GameList)
@@ -21,6 +23,7 @@ router.get('/', async(req,res) => {
     const GameList = await GameList.findAll()
     res.json(GameList) 
 })
+
 
 router.get('/:gameId', async (req, res) => {
     let gameId = Number(req.params.gameId)
@@ -55,3 +58,4 @@ router.post('/:gameId/comments', async (req, res) => {
         res.status(404).json({ message: ``})
     }
 })
+
