@@ -28,12 +28,12 @@ function App() {
 
   return (
     <div className='mainpage'>
+      <Navbar />
       <Router>
-        <Navbar/>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='RandomGame' element={<RandomGame />} />
-          <Route path = 'GameList' element={<GameList />}/>
+          <Route path='GameList' element={<GameList />} />
           <Route path='Login' element={<Login />} />
           <Route path='SignUp' element={<SignUp />} />
           <Route path='UserPage' element={<UserPage />} />
