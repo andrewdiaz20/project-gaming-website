@@ -17,6 +17,9 @@ const GameList = () => {
                     'Content-Type': 'application/json'
                 }
             }
+
+            console.log(url)
+            console.log(options)
             const response = await fetch(url, options)
             const data = await response.json()
             console.log(data)
@@ -27,6 +30,9 @@ const GameList = () => {
     }, [])
     return (
         <div>
+            <div>
+                <h1 class='GameListT'>GameList</h1>
+            </div>
 
             {games.map((game, index) => (
 
@@ -50,6 +56,7 @@ const GameList = () => {
                 </Card>
     
             ))}
+            <footer></footer>
         </div>
     )
 }            
