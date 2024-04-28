@@ -1,12 +1,16 @@
 import React from "react"
 import { useState, useEffect } from 'react'
 import App from "../App"
+
 import SearchBar from "./SearchBar";
+
+
+
 
 
 function Home() {
     return (
-        
+
         <main>
             <div class="HomeTitle">
                 <h1>GameGlanceGiggles</h1>
@@ -24,6 +28,7 @@ function Home() {
             </div>
             <div></div>
             <footer>UnknownInfoInHere</footer>
+
         </main>
     )
 }

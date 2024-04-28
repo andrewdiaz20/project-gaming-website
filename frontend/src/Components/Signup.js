@@ -1,107 +1,128 @@
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+function SignUp(props) {
+  const [userName, setUserName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
 
 
-function Signup() {
-    const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    signup();
+  };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        signup();
-    }
-
-    const signup = () => {
-        fetch('http://localhost:5000/signup', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                username: username,
-                email: email,
-                password: password,
-                firstName: firstName,
-                lastName: lastName
-            }),
-        })
-            .then((response) => response.json())
-            .then(data) => {
-                if (data.status === 'ok') {
-                    navigate('/login');
-                } else {
-                    alert(data.error);
-                }
-            }
-    const handleChange = (event) => {
-            const { name, value } = event.target;
-            if (name === 'username') {
-                setUsername(value);
-            } else if (name === 'email') {
-                setEmail(value);
-            } else if (name === 'password') {
-                setPassword(value);
-            }
+  const signup = () => {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/user/signup`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json', // Set to 'application/json'
+      },
+      body: JSON.stringify({
+        name: {
+          firstName: firstName,
+          lastName: lastName,
+        },
+        userName,
+        email,
+        password,
+      }),
+    })
+      .then((resp) => {
+        if (!resp.ok) {
+          //If the response status code is not OK, throw an error to catch it later
+          throw new Error('Network response was not ok');
         }
-
-        const renderSignup = () => {
-            return (
-                <div>
-                    <h1>Signup</h1>
-                </div>
-            );
+        return resp.json(); //Parse JSON only if the response status code is OK
+      })
+      .then((data) => {
+        if (data.error) {
+          alert(data.error);
+        } else {
+          alert('Registration successful');
         }
+      })
+      .catch((err) => {
+        console.error(err);
+        alert('An error occurred during registration');
+      });
+  };
 
-        const renderLogin = () => {
-            return (
-                <div>
-                    <h1>Login</h1>
-                </div>
-            );
-        }
-
-        const renderProfile = () => {
-            return (
-                <div>
-                    <h1>Profile</h1>
-                </div>
-            );
-        }
-
-        const renderError = () => {
-            return (
-                <div>
-                    <h1>Error</h1>
-                </div>
-            );
-        }
-
-        const renderPage = () => {
-            if (page === 'signup') {
-                return renderSignup();
-            } else if (page === 'login') {
-                return renderLogin();
-            } else if (page === 'profile') {
-                return renderProfile();
-            } else if (page === 'error') {
-                return renderError();
-            }
-        }
-
-        const page = 'signup';
-
-        renderPage();
-
-
-        return (
-            <div>
-                <h1>Signup</h1>
-            </div>
-        );
-    }
+  return (
+    <div className={'mainContainer'}>
+      <div className={'titleContainer'}>
+        <h2>Sign Up</h2>
+      </div>
+      <br />
+      <form onSubmit={handleSubmit}>
+        <div className={'inputContainer'}>
+          <input
+            type="text"
+            placeholder="userName"
+            value={userName}
+            onChange={(ev) => setUserName(ev.target.value)}
+            className="inputBox"
+          />
+        </div>
+        <div className={'inputContainer'}>
+          <input
+            type="text"
+            placeholder="First Name"
+            value={firstName}
+            onChange={(ev) => setFirstName(ev.target.value)}
+            className="inputBox"
+          />
+        </div>
+        <br />
+        <div className={'inputContainer'}>
+          <input
+            type="text"
+            placeholder="Last Name"
+            value={lastName}
+            onChange={(ev) => setLastName(ev.target.value)}
+            className="inputBox"
+          />
+        </div>
+        <div className={'inputContainer'}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(ev) => setEmail(ev.target.value)}
+            className="inputBox"
+          />
+        </div>
+        <div className={'inputContainer'}>
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(ev) => setPassword(ev.target.value)}
+            className="inputBox"
+          />
+        </div>
+        <div className={'inputContainer'}>
+          <input type="submit" value="Create Account" className="inputButton" />
+        </div>
+        <div className="inputContainer">
+          Already have an account?{' '}
+          <a
+            href="#"
+            onClick={(e) => {
+              navigate('/login');
+            }}
+          >
+            Login
+          </a>
+        </div>
+      </form>
+    </div>
+  );
 }
 
-    export default SignUp;
+export default SignUp;
+
