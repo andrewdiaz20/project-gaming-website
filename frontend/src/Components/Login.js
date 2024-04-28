@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Navbar from './Navigation';
+
 
 function Login({ login }) {
   const [email, setEmail] = useState('');
@@ -52,7 +54,7 @@ function Login({ login }) {
   return (
     <div className={'mainContainer'}>
       <div className={'titleContainer'}>
-        <h1 class="LoginTitle">Login</h1>
+        <h1 className="LoginTitle">Login</h1>
       </div>
       <br />
       <form onSubmit={handleSubmit}>
@@ -78,7 +80,7 @@ function Login({ login }) {
         <div className={'inputContainer'}>
           <input type="submit" value="Login" className="inputButton" />
         </div>
-        <div class="inputContainer">
+        <div className="create-a-new-account">
           <a
             href="#"
             onClick={(e) => {
@@ -89,7 +91,7 @@ function Login({ login }) {
           </a>
         </div>
 
-        <div class="loginlinks">
+        <div className="loginlinks">
           <button onClick={() => login()}>Login with Google</button>
           <br />
           <button onClick={() => login()}>Login with Facebook</button>
@@ -101,15 +103,14 @@ function Login({ login }) {
           <button onClick={() => login()}>Login with LinkedIn</button>
         </div>
         <div>
-          <a
-            class="create-a-new-account"
+          <a className="create-a-new-account"
             href="#"
-            onClick={(e) => navigate('/signup')}
-          >
+            onClick={(e) => navigate('/signup')}>
             Create a new account
           </a>
         </div>
       </form>
+      <footer></footer>
     </div>
   );
 }

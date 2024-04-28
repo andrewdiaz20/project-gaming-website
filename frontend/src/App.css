@@ -13,7 +13,7 @@
 }
 
 /* css for the navbar */
-.navbar{
+.Navbar{
   top: 14vh;
   display: flex;
   position: fixed;
@@ -117,7 +117,7 @@ form{
 .create-a-new-account{
   position: fixed;
   top: 45vh;
-  padding-left: 15vh;
+  padding-left: 5vh;
   list-style-type: none;
   text-decoration: none;
   color: #1b1b1b;
