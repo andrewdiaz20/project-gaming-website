@@ -80,16 +80,7 @@ function Login({ login }) {
         <div className={'inputContainer'}>
           <input type="submit" value="Login" className="inputButton" />
         </div>
-        <div className="create-a-new-account">
-          <a
-            href="#"
-            onClick={(e) => {
-              navigate('/signup');
-            }}
-          >
-            Create a new account
-          </a>
-        </div>
+    
 
         <div className="loginlinks">
           <button onClick={() => login()}>Login with Google</button>

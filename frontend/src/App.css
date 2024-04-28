@@ -97,9 +97,9 @@ form{
   flex-wrap: wrap;
   margin: auto;
   border: 3px rgba(0,0,0,0.5);
-  margin-left: 14vh;
-  padding-left: 9vh;
-  padding-right: 9vh;
+  margin-left: 15vh;
+  padding-left: 7vh;
+  padding-right: 18vh;
   padding-top: 3vh;
   padding-bottom: 3vh;
   background-color: rgba(0,0,0,0.5);
@@ -110,14 +110,14 @@ form{
   position: fixed;
   top: 50vh;
   margin: auto;
-  padding-left: 15vh;
   display: flex;
+  padding-right: 50vh;
+  margin-right: 18vh;
 }
 
 .create-a-new-account{
   position: fixed;
-  top: 45vh;
-  padding-left: 5vh;
+  top: 30vh;
   list-style-type: none;
   text-decoration: none;
   color: #1b1b1b;
@@ -141,7 +141,7 @@ form{
   position: fixed;
   top: 28vh;
   margin-left: 0vh;
-  padding-right:vh;
+  padding-right: vh;
   border: 3px #1b1b1b;
   font-size: 2vh;
 }
