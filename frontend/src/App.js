@@ -4,7 +4,7 @@ import './App.css';
 import RandomGame from './Components/RandomGame';
 import Home from './Components/Home';
 import Login from './Components/Login'
-import GameListPage from './Components/GameListPage'
+// import GameListP from './Components/GameListPage'
 import SignUp from './Components/Signup';
 import UserPage from './Components/UserPage';
 import Navbar from './Components/Navigation';
@@ -31,7 +31,7 @@ function App() {
   return (
     <div className='mainpage'>
       <Router>
-    <Home/>
+    <Navbar/>
        <Routes>
           <Route path='/' element={<Home />} />
           <Route path='RandomGame' element={<RandomGame />} />
