@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 require('dotenv').config({ path: '.env' });
 const user = require('./routes/user')
 const app = express()
-const game = require('./routes/game')
+const game = require('./routes/')
 
 
 //middlewares
