@@ -53,6 +53,10 @@ function Login({ login }) {
     //     });
   };
   return (
+    <main>
+        <div>
+            <img class='logininpic' src='1015937.jpg' alt='Halo'></img>
+        </div>
     <div className={'mainContainer'}>
       <div className={'titleContainer'}>
         <h1 className="LoginTitle">Login</h1>
@@ -94,8 +98,9 @@ function Login({ login }) {
           <br />
           <button onClick={() => login()}>Login with LinkedIn</button>
         </div>
+
         <div>
-          <a className="create-a-new-account"
+          <a className="create"
             href="#"
             onClick={(e) => navigate('/signup')}>
             Create a new account
@@ -104,6 +109,7 @@ function Login({ login }) {
       </form>
       <footer></footer>
     </div>
+    </main>
   );
 
 }
