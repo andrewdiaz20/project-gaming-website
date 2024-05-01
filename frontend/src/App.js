@@ -9,6 +9,8 @@ import SignUp from './Components/Signup';
 import UserPage from './Components/UserPage';
 import Navbar from './Components/Navigation';
 import GameList from './Components/GameList';
+import SearchBar from './Components/SearchBar';
+import TempSearch from './Components/TempSearchPage';
 
 
 function App() {
@@ -32,6 +34,7 @@ function App() {
     <div className='mainpage'>
       <Router>
     <Navbar/>
+    <SearchBar/>
        <Routes>
           <Route path='/' element={<Home />} />
           <Route path='RandomGame' element={<RandomGame />} />
@@ -39,6 +42,7 @@ function App() {
           <Route path='Login' element={<Login />} />
           <Route path='SignUp' element={<SignUp />} />
           <Route path='UserPage' element={<UserPage />} />
+          <Route path='TempSearch' element={<TempSearch />} />
         </Routes>
 
       </Router>
