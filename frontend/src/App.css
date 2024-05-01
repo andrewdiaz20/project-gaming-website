@@ -37,10 +37,10 @@
 
 /* css for the navbar */
 .Navbar{
-  /* top: 14vh;
+  top: 14vh;
   display: flex;
   position: fixed;
-  z-index: 6; */
+  z-index: 6;
 }
 
 ul{
