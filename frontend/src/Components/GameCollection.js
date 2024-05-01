@@ -8,24 +8,24 @@ const columns = [
 ];
 
 const rows = [
-  {
-    id: '1',
-    name: 'Game 1',
-    description: 'Game 1 Description',
-    games: '4000',
-  },
-  {
-    id: '2',
-    name: 'Game 2',
-    description: 'Game 2 Description',
-    games: '5000',
-  },
-  {
-    id: '3',
-    name: 'Game 3',
-    description: 'Game 3 Description',
-    games: '3000',
-  },
+  // {
+  //   id: '1',
+  //   name: 'Game 1',
+  //   description: 'Game 1 Description',
+  //   games: '4000',
+  // },
+  // {
+  //   id: '2',
+  //   name: 'Game 2',
+  //   description: 'Game 2 Description',
+  //   games: '5000',
+  // },
+  // {
+  //   id: '3',
+  //   name: 'Game 3',
+  //   description: 'Game 3 Description',
+  //   games: '3000',
+  // },
 ];
 
 const GameCollection = () => {
@@ -38,6 +38,7 @@ const GameCollection = () => {
           paginationModel: { page: 0, pageSize: 5 },
         },
       }}
+      sx={{ minHeight: '20vh'}}
       //pageSizeOptions={[5, 10]}
     />
   );
