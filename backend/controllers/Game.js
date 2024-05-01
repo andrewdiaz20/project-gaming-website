@@ -1,5 +1,7 @@
 const VideoGames = require('../models/Game')
+const FavoritedGames = require('../models/FavoritedGames');
 const { default: axios } = require('axios')
+const ObjectId = require('mongodb').ObjectId;
 
 const CLIENT_ID = process.env.REACT_APP_IGDB_CLIENT_ID;
 const CLIENT_SECRET = process.env.REACT_APP_IGDB_CLIENT_SECRET;
@@ -8,6 +10,7 @@ const ACCESS_TOKEN = process.env.REACT_APP_IGDB_ACCESS_TOKEN;
 
 
     async function get10Games(req, res){
+        const { userId } = req.body;
         try {
             //retrive data from the api via a POST request
             const VideoGames = await axios({
@@ -19,7 +22,7 @@ const ACCESS_TOKEN = process.env.REACT_APP_IGDB_ACCESS_TOKEN;
                     'Authorization': `Bearer ${ACCESS_TOKEN}`
                 },
                 //data is the type of info we want from the database
-                data: 'fields name, platforms.name, release_dates.date, summary, artworks.url; limit 30;'
+                data: 'fields id,name, platforms.name, release_dates.date, summary, artworks.url; limit 30;'
             });
     
             //promises which map through the array created Videogames variable creating a new array 
@@ -31,10 +34,28 @@ const ACCESS_TOKEN = process.env.REACT_APP_IGDB_ACCESS_TOKEN;
                 }
                 return null
             });
-            const gamesWithImages = VideoGames.data.map((game, index) => ({
+
+
+            let favoritedGames = [];
+            if(userId){
+                favoritedGames = await FavoritedGames.find({ "userId": new ObjectId(userId) });
+                console.log('favoritedGames', favoritedGames);
+            }
+            
+            const gamesWithImages = VideoGames.data.map((game, index) => {
+                let isFavoritedGame = false;
+                if(favoritedGames.length > 0){
+                    isFavoritedGame = favoritedGames.some((fg) => {
+                        console.log('asd', fg.externalGameId, game.id);
+                        return fg.externalGameId == game.id.toString()
+                    });
+                }
+
+                return {
                 ...game,
-                image: artUrl[index] 
-            }));
+                image: artUrl[index],
+                favorited: isFavoritedGame
+            }});
     
             res.json(gamesWithImages);
         } catch (error){
@@ -119,11 +140,43 @@ async function RandomGame(req,res){
 }
 
 
+async function favoriteGame(req, res) {
+    console.log('favorite called', req.body);
+
+    const {
+      name,
+      externalGameId,
+      userId
+    } = req.body;
+
+    const game = new VideoGames({
+        VideoGames_name: name,
+        externalGameId,
+    });
+  
+    try {
+      await game.save().then(async (data) => {
+        const favoritedGame = new FavoritedGames({
+          gameId: data._id,
+          externalGameId,
+          userId: new ObjectId(userId),
+        });
+
+        await favoritedGame.save();
+      });
+
+      res.json({ success: true });
+    } catch (error) {
+      res.json({ success: false, message: error.message });
+    }
+  }
+
+
 
 module.exports = {
     get10Games,
     SearchResults,
-    get1Games
-   
+    get1Games,
+    favoriteGame
 }
     

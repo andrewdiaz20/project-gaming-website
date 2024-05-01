@@ -21,9 +21,9 @@ const navmenu = [
         path: '/Signup',
     },
     {
-        title: 'Signup',
-        path: '/Signup',
-    },
+      title: 'User Page',
+      path: '/userpage',
+  },
 ];
 
 const MainPage = ({ isLoggedIn, logout }) => {

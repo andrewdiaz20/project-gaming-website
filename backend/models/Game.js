@@ -5,28 +5,26 @@ const VideoGamesSchema = new mongoose.Schema({
         type: String,
         required:true
     },
-    VideoGames_picture: {
-        type: String,
-        required:true,
-        default: ""
-    },
     VideoGames_genre: {
         type: String,
-        required:true
+        required:false
     },
     VideoGames_description: {
         type: String,
-        required:true
+        required:false
     },
     VideoGames_release_date: {
         type: String,
-        required:true
+        required:false
     },
     VideoGames_rating: {
         type: String,
+        required:false
+    },
+    externalGameId: {
+        type: String,
         required:true
     },
-
 })
 
 module.exports = mongoose.model('VideoGames',VideoGamesSchema)

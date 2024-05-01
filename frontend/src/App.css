@@ -152,8 +152,8 @@ li a {
   border-radius: 1em;
   text-decoration: none;
   border: 3px solid #420098;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
   color:#420098;
   margin-left: 20px;
   display:flex;
@@ -285,8 +285,8 @@ a:hover{
   color: #420098;
   margin-left: 10vh;
   margin-right: 10vh;
-  margin-top: 25vh;
-  margin-bottom: 20vh;
+  margin-top: 20px;
+  margin-bottom: 20px;
   background-color: #FFE4F3;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -341,9 +341,9 @@ a:hover{
 }
 
 .box{
-  margin-top: 20vh;
+  /* margin-top: 20vh; */
   color: #120522;
-  background-size: cover;
+  /* background-size: cover; */
 }
 
 /* Signup */
@@ -397,7 +397,9 @@ a:hover{
 
 .header{
   position: fixed;
+  top: 0;
   width: 100%;
+  z-index: 1000;
 }
 
 .content{

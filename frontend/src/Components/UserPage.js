@@ -51,7 +51,7 @@ const UserPage = () => {
   return (
     <main>
       <div>
-        <h1 class="userT">User Page</h1>
+        {/* <h1 class="userT">User Page</h1> */}
         <Box class="box" sx={{ width: '100%', typography: 'body1'}}>
           <TabContext value={value}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
@@ -71,7 +71,7 @@ const UserPage = () => {
               <ReviewUserPage userId={userId}/>
             </TabPanel>
             <TabPanel value="3">
-              <GameCollection />
+              <GameCollection userId={userId}/>
             </TabPanel>
           </TabContext>
         </Box>
