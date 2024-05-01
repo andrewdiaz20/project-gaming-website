@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import SearchBar from './SearchBar';
 
 function Navbar({ isLoggedIn, logout }) {
   let navigate = useNavigate();
@@ -9,7 +10,7 @@ function Navbar({ isLoggedIn, logout }) {
       <nav className="Navbar">
         <ul className="Navbar">
           <li>
-            <a>Search</a>
+            <a> <SearchBar/></a>
           </li>
           <li>
             <a href="/">Home</a>
