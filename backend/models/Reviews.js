@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const ReviewSchema = new mongoose.Schema({
-    id: {
+    userId: {
         type: String,
         required:true
     },
@@ -19,14 +19,13 @@ const ReviewSchema = new mongoose.Schema({
         required:true
     },
     date: {
-        type: String,
+        type: Number,
         required:true
     },
     gameId: {
         type: Number,
         required:true
     },
-
 
 })
 
