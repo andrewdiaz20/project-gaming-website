@@ -4,7 +4,7 @@ const ObjectId = require('mongodb').ObjectId;
 const ReviewSchema = new mongoose.Schema({
     userId: {
         type: ObjectId,
-        required:true
+        required:false
     },
     author: {
         type: String,

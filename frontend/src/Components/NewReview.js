@@ -63,7 +63,7 @@ function NewReview() {
     }
 
     return (
-        <div  style={{ margin: '10px', backgroundColor: '#f0f0f0', padding: '25px', borderRadius: '10px' }}>
+        <div  style={{ margin: '10px', backgroundColor: '#f0f0f0', padding: '200px', borderRadius: '10px' }}>
             <h3>Leave us a Review</h3>
             <form onSubmit={handleSubmit} >
                 <input className="form-2" onChange={handleChange} value={reviews.author} name="author" placeholder="author" />
@@ -80,9 +80,9 @@ function NewReview() {
                 {reviews.map((review, index) => (
                     <div key={index} className="card-div" >
                         <Card className="custom-card" >
-                            <CardContent> <h4 className="card-headers">Name:</h4> <p className="card-text-size">{review.name} </p></CardContent>
+                            <CardContent> <h4 className="card-headers">Name:</h4> <p className="card-text-size">{review.author} </p></CardContent>
                             <Typography><h4 className="card-headers">Rating: </h4> <p className="card-text-size">{review.rating}</p></Typography>
-                            <h4 className="card-headers">Comment:</h4 > <p className="card-text-size">{review.comment}</p>
+                            <h4 className="card-headers">Comment:</h4 > <p className="card-text-size">{review.content}</p>
                         </Card>
 
                     </div>
