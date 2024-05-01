@@ -132,3 +132,4 @@ const InputField = ({ type, value, onChange, error, required }) => {
 };
 
 export default Login;
+

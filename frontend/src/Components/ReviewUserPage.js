@@ -45,7 +45,6 @@ const ReviewUserPage = () => {
 
     }, []);
 
-
     // const loginUser = ({ email, password }) => {
     //     console.log(JSON.stringify({ email, password }));
     //     console.log('backend url', process.env.REACT_APP_BACKEND_URL);
@@ -83,7 +82,6 @@ const ReviewUserPage = () => {
     //     // navigate('/userpage');
     //   };
 
-
     return (
         <Fragment>{
             !data || data.length === 0 
@@ -99,3 +97,4 @@ const ReviewUserPage = () => {
 }
 
 export default ReviewUserPage;
+

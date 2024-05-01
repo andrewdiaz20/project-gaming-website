@@ -12,7 +12,6 @@ const UserPage = () => {
   const [value, setValue] = React.useState('1');
   const [user, setUser] = React.useState({});
 
-
   useEffect(() => {
     let userId = localStorage.getItem('userId');
     console.log('userId', userId);
