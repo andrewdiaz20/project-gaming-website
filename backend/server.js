@@ -11,12 +11,20 @@ const comment = require('./routes/comment')
 
 
 //middlewares
-app.use(cors());
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
+app.use(cors({
+    origin: "*",
+  }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-app.use('/api/user', user)
+
+app.use('/api/user', user);
 app.use('/games', game)
 app.use('/review',review )
 app.use('/comment', comment)

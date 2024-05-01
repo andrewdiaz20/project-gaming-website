@@ -1,134 +1,159 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 
-function SignUp(props) {
-  const [userName, setUserName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+const SignUpForm = () => {
+  const [formState, setFormState] = useState({
+    userName: '',
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+  });
 
+  const [error, setError] = useState(null);
 
-  const navigate = useNavigate();
-
-  const handleSubmit = (event) => {
+  const handleSubmit = useCallback((event) => {
     event.preventDefault();
-    signup();
-  };
+    const signup = async () => {
+      try {
+        console.log('backend url', process.env.REACT_APP_BACKEND_URL);
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/user/signup`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: {
+              firstName: formState.firstName,
+              lastName: formState.lastName,
+            },
+            userName: formState.userName,
+            email: formState.email,
+            password: formState.password,
+          }),
+        });
 
-  const signup = () => {
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/user/signup`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json', // Set to 'application/json'
-      },
-      body: JSON.stringify({
-        name: {
-          firstName: firstName,
-          lastName: lastName,
-        },
-        userName,
-        email,
-        password,
-      }),
-    })
-      .then((resp) => {
-        if (!resp.ok) {
-          //If the response status code is not OK, throw an error to catch it later
+        if (!response.ok) {
           throw new Error('Network response was not ok');
         }
-        return resp.json(); //Parse JSON only if the response status code is OK
-      })
-      .then((data) => {
+
+        const data = await response.json();
+
         if (data.error) {
-          alert(data.error);
+          setError(data.error);
         } else {
           alert('Registration successful');
         }
-      })
-      .catch((err) => {
-        console.error(err);
-        alert('An error occurred during registration');
-      });
+      } catch (error) {
+        setError(error.message);
+      }
+    };
+
+    signup();
+  }, [formState]);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormState((prevFormState) => ({...prevFormState, [name]: value }));
   };
 
   return (
-    <main>
-        <div class='SignT'>
-            <img src='istockphoto-1325074732-2048x2048.jpg'alt='game'></img>
-        </div>
-    <div className={'mainContainer'}>
-      <div className={'titleContainer'}>
-        <h2 class='SignupT'>Sign Up</h2>
+    <div className="mainContainer">
+      <div className="titleContainer">
+        <h2>Sign Up</h2>
       </div>
-      <br />
+      {error && (
+        <div className="errorContainer">
+          <p>{error}</p>
+        </div>
+      )}
       <form onSubmit={handleSubmit}>
-        <div className={'inputContainer'}>
-          <input
-            type="text"
-            placeholder="userName"
-            value={userName}
-            onChange={(ev) => setUserName(ev.target.value)}
-            className="inputBox"
-          />
-        </div>
-        <div className={'inputContainer'}>
-          <input
-            type="text"
-            placeholder="First Name"
-            value={firstName}
-            onChange={(ev) => setFirstName(ev.target.value)}
-            className="inputBox"
-          />
-        </div>
-        <br />
-        <div className={'inputContainer'}>
-          <input
-            type="text"
-            placeholder="Last Name"
-            value={lastName}
-            onChange={(ev) => setLastName(ev.target.value)}
-            className="inputBox"
-          />
-        </div>
-        <div className={'inputContainer'}>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(ev) => setEmail(ev.target.value)}
-            className="inputBox"
-          />
-        </div>
-        <div className={'inputContainer'}>
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(ev) => setPassword(ev.target.value)}
-            className="inputBox"
-          />
-        </div>
-        <div className={'inputContainer'}>
+        <UserInformationForm
+          firstName={formState.firstName}
+          lastName={formState.lastName}
+          userName={formState.userName}
+          onChange={handleInputChange}
+        />
+        <AccountInformationForm
+          email={formState.email}
+          password={formState.password}
+          onChange={handleInputChange}
+        />
+        <div className="inputContainer">
           <input type="submit" value="Create Account" className="inputButton" />
         </div>
         <div className="inputContainer">
           Already have an account?{' '}
-          <a
-            href="#"
-            onClick={(e) => {
-              navigate('/login');
-            }}
-          >
-            Login
-          </a>
+          <Link to="/login">Login</Link>
         </div>
       </form>
     </div>
-    <footer></footer>
-    </main>
   );
-}
+};
 
-export default SignUp;
+const UserInformationForm = ({ firstName, lastName, userName, onChange }) => {
+  return (
+    <div className="formSection">
+      <h3>User Information</h3>
+      <InputField
+        type="text"
+        name="firstName"
+        placeholder="First Name"
+        value={firstName}
+        onChange={onChange}
+      />
+      <InputField
+        type="text"
+        name="lastName"
+        placeholder="Last Name"
+        value={lastName}
+        onChange={onChange}
+      />
+      <InputField
+        type="text"
+        name="userName"
+        placeholder="User Name"
+        value={userName}
+        onChange={onChange}
+      />
+    </div>
+  );
+};
 
+const AccountInformationForm = ({ email, password, onChange }) => {
+  return (
+    <div className="formSection">
+      <h3>Account Information</h3>
+      <InputField
+        type="email"
+        name="email"
+        placeholder="Email"
+        value={email}
+        onChange={onChange}
+      />
+      <InputField
+        type="password"
+        name="password"
+        placeholder="Password"
+        value={password}
+        onChange={onChange}
+      />
+    </div>
+  );
+};
+  const InputField = ({ type, name, placeholder, value, onChange }) => {
+    return (
+      <div className="inputContainer">
+        <input
+          type={type}
+          name={name}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          className="inputBox"
+        />
+      </div>
+    );
+  };
+
+export default SignUpForm
