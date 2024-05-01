@@ -56,4 +56,5 @@ const GameListPage = () => {
   )
 }
 
-export default GameListPage;
+
+export default GameListPage

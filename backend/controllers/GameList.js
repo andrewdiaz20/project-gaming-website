@@ -25,25 +25,25 @@ router.get('/', async(req,res) => {
 })
 
 
-router.get('/:gameId', async (req, res) => {
-    let gameId = Number(req.params.gameId)
-    if(isNaN(gameId)){
-        res.status(404).json({message: `404"${gameId}"`})
-    }else{
-        const game = await game.findOne({
-            where: { gameId: gameId },
-            include: {
-                association: 'comments',
-                include: 'author'
-            }
-        })
-        if (!game){
-            res.status(404).json({ message: `Game not found "${gameId}"`})
-        } else {
-            res.json(game)
-        }
-    }
-})
+// router.get('/:gameId', async (req, res) => {
+//     let gameId = Number(req.params.gameId)
+//     if(isNaN(gameId)){
+//         res.status(404).json({message: `404"${gameId}"`})
+//     }else{
+//         const game = await game.findOne({
+//             where: { gameId: gameId },
+//             include: {
+//                 association: 'comments',
+//                 include: 'author'
+//             }
+//         })
+//         if (!game){
+//             res.status(404).json({ message: `Game not found "${gameId}"`})
+//         } else {
+//             res.json(game)
+//         }
+//     }
+// })
 
 router.post('/:gameId/comments', async (req, res) => {
     const gameId = Number(req.params.gameId)

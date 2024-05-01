@@ -11,7 +11,7 @@ const {
 //get 10 Games
 router.post('/get10', get10Games)
 //Artwork
-router.post('/art', SearchResultsArtWork)
+
 //get SearchResults
 router.post('/search', SearchResults)
 //get 1 games
