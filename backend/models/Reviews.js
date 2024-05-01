@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const ReviewSchema = new mongoose.Schema({
     userId: {
         type: String,
-        required:true
+        required:false
     },
     author: {
         type: String,
@@ -19,12 +19,12 @@ const ReviewSchema = new mongoose.Schema({
         required:true
     },
     date: {
-        type: Number,
-        required:true
+        type: String,
+        required:false
     },
     gameId: {
         type: Number,
-        required:true
+        required:false
     },
 
 })

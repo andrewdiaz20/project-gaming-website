@@ -16,6 +16,7 @@ import Navbar from './Components/Navigation';
 import GameList from './Components/GameList';
 import SearchBar from './Components/SearchBar';
 import TempSearch from './Components/TempSearchPage';
+import NewReview from './Components/NewReview';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -50,6 +51,7 @@ function App() {
           <Route path='SignUp' element={<SignUp />} />
           <Route path='UserPage' element={<UserPage />} />
           <Route path='TempSearch' element={<TempSearch />} />
+          <Route path='TempReview' element={<NewReview />} />
         </Routes>
       </Router>
     </div>
