@@ -41,7 +41,6 @@ function App() {
     <div className="mainpage">
       <Router>
     <Navbar isLoggedIn={isLoggedIn} logout={logout}/>
-    <SearchBar/>
        <Routes>
           <Route path='/' element={<Home />} />
           <Route path='RandomGame' element={<RandomGame />} />
