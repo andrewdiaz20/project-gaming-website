@@ -37,13 +37,13 @@ router.get('/', async(req,res) => {
 //                 include: 'author'
 //             }
 //         })
-        if (!game){
-            res.status(404).json({ message: `Game not found "${gameId}"`})
-        } else {
-            res.json(game)
-        }
-    }
-})
+//         if (!game){
+//             res.status(404).json({ message: `Game not found "${gameId}"`})
+//         } else {
+//             res.json(game)
+//         }
+//     }
+// })
 
 router.post('/:gameId/comments', async (req, res) => {
     const gameId = Number(req.params.gameId)
