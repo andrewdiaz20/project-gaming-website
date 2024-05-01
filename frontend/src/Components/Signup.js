@@ -63,7 +63,7 @@ const SignUpForm = () => {
             <img src='istockphoto-1325074732-2048x2048.jpg'alt='game'></img>
         </div>
     <div className="mainContainer">
-      <div className="titleContainer">
+      <div className="SignupT">
         <h2>Sign Up</h2>
       </div>
       {error && (
@@ -92,6 +92,7 @@ const SignUpForm = () => {
         </div>
       </form>
     </div>
+    <footer></footer>
     </main>
   );
 };
