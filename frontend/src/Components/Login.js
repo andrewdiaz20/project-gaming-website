@@ -62,8 +62,12 @@ const Login = ({ login }) => {
   };
 
   return (
-    <div className="mainContainer">
-      <div className="titleContainer">
+    <main>
+        <div>
+            <img className='logininpic' src='1015937.jpg' alt='Halo'></img>
+        </div>
+    <div className={'mainContainer'}>
+      <div className={'titleContainer'}>
         <h1 className="LoginTitle">Login</h1>
       </div>
       <form onSubmit={handleSubmit}>
@@ -104,6 +108,8 @@ const Login = ({ login }) => {
 
       </form>
     </div>
+    <footer></footer>
+    </main>
   );
 };
 

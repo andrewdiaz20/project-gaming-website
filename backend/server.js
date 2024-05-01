@@ -6,7 +6,8 @@ require('dotenv').config({ path: '.env' });
 const user = require('./routes/user')
 const app = express()
 const game = require('./routes/game')
-const review = require('./routes/Review')
+const review = require('./routes/reviews')
+const comment = require('./routes/comment')
 
 
 //middlewares
@@ -25,7 +26,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/user', user);
 app.use('/games', game)
-app.use('/api/review', review)
+app.use('/review',review )
+app.use('/comment', comment)
+// app.use('/reivews', review)
 // app.use('/comments', comment)
 
 mongoose.connect(process.env.MONGO_URI)
