@@ -62,8 +62,17 @@ const Login = ({ login }) => {
   };
 
   return (
+<<<<<<< HEAD
     <div className="mainContainer">
       <div className="titleContainer">
+=======
+    <main>
+        <div>
+            <img className='logininpic' src='1015937.jpg' alt='Halo'></img>
+        </div>
+    <div className={'mainContainer'}>
+      <div className={'titleContainer'}>
+>>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
         <h1 className="LoginTitle">Login</h1>
       </div>
       <form onSubmit={handleSubmit}>
@@ -104,6 +113,11 @@ const Login = ({ login }) => {
 
       </form>
     </div>
+<<<<<<< HEAD
+=======
+    <footer></footer>
+    </main>
+>>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
   );
 };
 

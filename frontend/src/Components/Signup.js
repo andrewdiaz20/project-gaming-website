@@ -58,8 +58,17 @@ const SignUpForm = () => {
   };
 
   return (
+<<<<<<< HEAD
     <div className="mainContainer">
       <div className="titleContainer">
+=======
+    <main>
+    <div className='SignT'>
+            <img src='istockphoto-1325074732-2048x2048.jpg'alt='game'></img>
+        </div>
+    <div className="mainContainer">
+      <div className="SignupT">
+>>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
         <h2>Sign Up</h2>
       </div>
       {error && (
@@ -88,6 +97,11 @@ const SignUpForm = () => {
         </div>
       </form>
     </div>
+<<<<<<< HEAD
+=======
+    <footer></footer>
+    </main>
+>>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
   );
 };
 
@@ -156,4 +170,8 @@ const AccountInformationForm = ({ email, password, onChange }) => {
     );
   };
 
+<<<<<<< HEAD
 export default SignUpForm
+=======
+export default SignUpForm
+>>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461

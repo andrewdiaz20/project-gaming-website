@@ -4,6 +4,8 @@ const router = require ('express').Router()
 const {
     get10Games,
     SearchResults,
+    SearchResultsArtWork,
+    get1Games,
 } = require('../controllers/Game')
 
 //get 10 Games
@@ -12,6 +14,7 @@ router.post('/get10', get10Games)
 
 //get SearchResults
 router.post('/search', SearchResults)
-
+//get 1 games
+router.post('/get1', get1Games)
 
 module.exports = router

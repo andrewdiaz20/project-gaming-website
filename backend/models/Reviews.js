@@ -1,9 +1,10 @@
 const mongoose = require('mongoose')
+const ObjectId = require('mongodb').ObjectId;
 
 const ReviewSchema = new mongoose.Schema({
     userId: {
-        type: String,
-        required:false
+        type: ObjectId,
+        required:true
     },
     author: {
         type: String,

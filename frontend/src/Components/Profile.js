@@ -64,6 +64,10 @@ const Profile = ({ user }) => {
   };
 
   return (
+<<<<<<< HEAD
+=======
+    <main>
+>>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
     <Fragment>
       <form onSubmit={submitHandler} style={{ backgroundColor: 'white' }}>
         <TextField
@@ -137,6 +141,11 @@ const Profile = ({ user }) => {
         )}
       </form>
     </Fragment>
+<<<<<<< HEAD
+=======
+    <footer></footer>
+    </main>
+>>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
   );
 };
 

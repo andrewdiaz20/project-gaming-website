@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
 
 const CommentSchema = new mongoose.Schema({
-    userId: {
+    id: {
         type: String,
         required:true
     },
-    reviewId: {
+    review: {
         type: String,
         required:true,
         default: ""

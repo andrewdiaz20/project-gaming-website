@@ -1,5 +1,9 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+<<<<<<< HEAD
+=======
+import SearchBar from './SearchBar';
+>>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
 
 function Navbar({ isLoggedIn, logout }) {
   let navigate = useNavigate();
@@ -9,7 +13,11 @@ function Navbar({ isLoggedIn, logout }) {
       <nav className="Navbar">
         <ul className="Navbar">
           <li>
+<<<<<<< HEAD
             <a>Search</a>
+=======
+            <a> <SearchBar/></a>
+>>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
           </li>
           <li>
             <a href="/">Home</a>
@@ -31,9 +39,15 @@ function Navbar({ isLoggedIn, logout }) {
                   Logout
                 </a>
               </li>
+<<<<<<< HEAD
               {/* <li>
                 <a href="UserPage">Profile</a>
               </li> */}
+=======
+              <li>
+                <a href="UserPage">Profile</a>
+              </li>
+>>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
             </>
           ) : (
             <li>
