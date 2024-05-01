@@ -1,18 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import { useHref, useNavigate } from 'react-router-dom';
 
 const GameList = () => {
+
+
     const [games, setGames] = useState([]);
 
-    const [isClicked, setIsClicked] = useState(false);
-  
-    function handleClick() {
-      setIsClicked(!isClicked);
-    }
+    // function toAnotherPage(id){
+    //     useEffect(() => {
+    //         async function fetchIds() {
+    //           try {
+    //             const ids = await backend.getAllId();
+    //             return ids;
+    //           } catch (error) {
+    //             console.error("Error fetching ids:", error);
+    //           }
+    //         }
+    //         fetchIds();
+    //       }, []);
+    // }
 
     useEffect(() => {
         async function fetchData() {
@@ -38,15 +49,21 @@ const GameList = () => {
         <main>
             <div>
                 <div>
-                    <img class='background2' src='wp3146100.jpg' alt='witcher 3 background' />
+                    <img className='background2' src='wp3146100.jpg' alt='witcher 3 background' />
                 </div>
                 <div>
-                    <h1 class='GameListT'>GameList</h1>
+                    <h1 className='GameListT'>GameList</h1>
                 </div>
                 {games.map((game, index) => (
 
-                    <Card class="card" sx={{ maxWidth: 345 }}>
-                        <CardActionArea onClick={() => {}}>
+                    <Card className="cardgames" key={game.id} sx={{ maxWidth: 800 }}>
+                        {/* your goal on line 55, 
+                                you want to figure out how to provide an argument (the id of the game) to handleCardClick 
+                                things to note:
+                                    you are not calling handleCardClick
+                                    handleCardClick is a callback function, meaning is is called by the browser when this element is clicked.                         
+                        */}
+                        <CardActionArea id="games">
                             <CardMedia
                                 component="img"
                                 height="140"
