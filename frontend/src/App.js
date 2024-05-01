@@ -14,6 +14,8 @@ import SignUp from './Components/Signup';
 import UserPage from './Components/UserPage';
 import Navbar from './Components/Navigation';
 import GameList from './Components/GameList';
+import SearchBar from './Components/SearchBar';
+import TempSearch from './Components/TempSearchPage';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -38,6 +40,7 @@ function App() {
   return (
     <div className="mainpage">
       <Router>
+<<<<<<< HEAD
         <Navbar isLoggedIn={isLoggedIn} logout={logout} />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -46,6 +49,18 @@ function App() {
           <Route path="Login" element={<Login login={login} />} />
           <Route path="SignUp" element={<SignUp />} />
           <Route path="UserPage" element={<UserPage />} />
+=======
+    <Navbar/>
+    <SearchBar/>
+       <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='RandomGame' element={<RandomGame />} />
+          <Route path='GameList' element={<GameList />} />
+          <Route path='Login' element={<Login />} />
+          <Route path='SignUp' element={<SignUp />} />
+          <Route path='UserPage' element={<UserPage />} />
+          <Route path='TempSearch' element={<TempSearch />} />
+>>>>>>> bf26a96163b7cef6942b809def73863af748dd5c
         </Routes>
       </Router>
     </div>
