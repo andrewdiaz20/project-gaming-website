@@ -55,7 +55,7 @@ function Login({ login }) {
   return (
     <main>
         <div>
-            <img class='logininpic' src='1015937.jpg' alt='Halo'></img>
+            <img className='logininpic' src='1015937.jpg' alt='Halo'></img>
         </div>
     <div className={'mainContainer'}>
       <div className={'titleContainer'}>
