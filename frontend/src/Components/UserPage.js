@@ -15,9 +15,10 @@ const UserPage = () => {
     setValue(newValue);
   };
   return (
+    <main>
     <div>
-      <h1>User Page</h1>
-      <Box sx={{ width: '100%', typography: 'body1' }}>
+      <h1 class="userT">User Page</h1>
+      <Box class="box"sx={{ width: '100%', typography: 'body1' }}>
         <TabContext value={value}>
           <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
             <TabList onChange={handleChange} aria-label="lab API tabs example">
@@ -38,6 +39,8 @@ const UserPage = () => {
         </TabContext>
       </Box>
     </div>
+    <footer></footer>
+    </main>
   );
 };
 
