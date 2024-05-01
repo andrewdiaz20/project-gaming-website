@@ -58,11 +58,11 @@ const GameList = () => {
         <main>
             <div>
                 <div>
-                    <img className='background2' src='wp3146100.jpg' alt='witcher 3 background' />
+                    {/* <img className='background2' src='wp3146100.jpg' alt='witcher 3 background' /> */}
                 </div>
-                <div>
+                {/* <div>
                     <h1 className='GameListT'>GameList</h1>
-                </div>
+                </div> */}
                 {games.map((game, index) => (
 
                     <Card className="cardgames" key={game.id} sx={{ maxWidth: 800 }}>
@@ -91,7 +91,6 @@ const GameList = () => {
                     </Card>
 
                 ))}
-                <footer></footer>
             </div>
         </main>
     )
