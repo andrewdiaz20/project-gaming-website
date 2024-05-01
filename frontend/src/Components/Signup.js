@@ -53,9 +53,13 @@ function SignUp(props) {
   };
 
   return (
+    <main>
+        <div class='SignT'>
+            <img src='istockphoto-1325074732-2048x2048.jpg'alt='game'></img>
+        </div>
     <div className={'mainContainer'}>
       <div className={'titleContainer'}>
-        <h2>Sign Up</h2>
+        <h2 class='SignupT'>Sign Up</h2>
       </div>
       <br />
       <form onSubmit={handleSubmit}>
@@ -121,6 +125,8 @@ function SignUp(props) {
         </div>
       </form>
     </div>
+    <footer></footer>
+    </main>
   );
 }
 

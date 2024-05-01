@@ -4,7 +4,7 @@ import './App.css';
 import RandomGame from './Components/RandomGame';
 import Home from './Components/Home';
 import Login from './Components/Login'
-// import GameListP from './Components/GameListPage'
+import GameListPage from './Components/GameListPage'
 import SignUp from './Components/Signup';
 import UserPage from './Components/UserPage';
 import Navbar from './Components/Navigation';
