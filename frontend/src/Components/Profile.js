@@ -64,6 +64,7 @@ const Profile = ({ user }) => {
   };
 
   return (
+    <main>
     <Fragment>
       <form onSubmit={submitHandler} style={{ backgroundColor: 'white' }}>
         <TextField
@@ -137,6 +138,8 @@ const Profile = ({ user }) => {
         )}
       </form>
     </Fragment>
+    <footer></footer>
+    </main>
   );
 };
 
