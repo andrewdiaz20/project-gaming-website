@@ -1,24 +1,18 @@
-<<<<<<< HEAD
-import React, { useState, useEffect } from 'react';
-=======
 import React, { useState, useEffect, useCallback } from 'react';
->>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-<<<<<<< HEAD
 
-const GameList = () => {
-    const [games, setGames] = useState([]);
+// const GameList = () => {
+//     const [games, setGames] = useState([]);
 
-    const [isClicked, setIsClicked] = useState(false);
+//     const [isClicked, setIsClicked] = useState(false);
   
-    function handleClick() {
-      setIsClicked(!isClicked);
-    }
-=======
+//     function handleClick() {
+//       setIsClicked(!isClicked);
+//     }
 import { useHref, useNavigate } from 'react-router-dom';
 
 const GameList = () => {
@@ -39,7 +33,6 @@ const GameList = () => {
     //         fetchIds();
     //       }, []);
     // }
->>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
 
     useEffect(() => {
         async function fetchData() {
@@ -65,17 +58,6 @@ const GameList = () => {
         <main>
             <div>
                 <div>
-<<<<<<< HEAD
-                    <img class='background2' src='wp3146100.jpg' alt='witcher 3 background' />
-                </div>
-                <div>
-                    <h1 class='GameListT'>GameList</h1>
-                </div>
-                {games.map((game, index) => (
-
-                    <Card class="card" sx={{ maxWidth: 345 }}>
-                        <CardActionArea onClick={() => {}}>
-=======
                     <img className='background2' src='wp3146100.jpg' alt='witcher 3 background' />
                 </div>
                 <div>
@@ -91,7 +73,6 @@ const GameList = () => {
                                     handleCardClick is a callback function, meaning is is called by the browser when this element is clicked.                         
                         */}
                         <CardActionArea id="games">
->>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
                             <CardMedia
                                 component="img"
                                 height="140"
@@ -116,8 +97,4 @@ const GameList = () => {
     )
 }
 
-<<<<<<< HEAD
 export default GameList
-=======
-export default GameList
->>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461

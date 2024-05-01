@@ -1,31 +1,12 @@
-<<<<<<< HEAD
-import React, { useState } from "react";
+
 import Navbar from "./Navigation";
-=======
 import React, { useState, useEffect } from 'react';
->>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
-<<<<<<< HEAD
-function GameListPage() {
-    const [isClicked, setIsClicked] = useState(false);
-  
-    function handleClick() {
-      setIsClicked(!isClicked);
-    }
-  
-    return (
-      <div className={`card ${isClicked ? "clicked" : ""}`} onClick={handleClick}>
-        <h2>Card Title</h2>
-        <p>Card Content</p>
-      </div>
-    );
-  }
-=======
 const GameListPage = () => {
   const [games, setGames] = useState([]);
 
@@ -77,6 +58,5 @@ const GameListPage = () => {
   )
 }
 
->>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
 
 export default GameListPage

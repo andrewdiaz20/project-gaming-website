@@ -1,10 +1,6 @@
 import React ,{useState}from 'react'
 import { FaSearch } from "react-icons/fa";
-<<<<<<< HEAD
-import "./SearchBar.css"
-=======
 // import "./SearchBar.css"
->>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
 
 function SearchBar() {
 

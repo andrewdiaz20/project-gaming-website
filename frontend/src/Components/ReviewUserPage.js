@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-import { useEffect, Fragment } from 'react';
-import Rating from '@mui/material/Rating';
-=======
 import { useState, useEffect, Fragment } from 'react';
 import Rating from '@mui/material/Rating';
 import Divider from '@mui/material/Divider';
->>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
 
 const data = [
     // {
@@ -31,26 +26,6 @@ const data = [
     // }
 ]
 
-<<<<<<< HEAD
-const ReviewUserPage = () => {
-
-    useEffect(() => {
-
-        let userId = localStorage.getItem('userId');
-
-        // fetch(`${process.env.REACT_APP_BACKEND_URL}/api/review/getReviewsByUser?userId=${userId}`, {
-        //   method: 'GET',
-        //   headers: {
-        //     'Content-Type': 'application/json', // Set to 'application/json'
-        //   },
-        // }).then((resp) => {
-        //     console.log('reviews', resp)
-        // })
-        // .catch((err) => {
-        //     console.error(err.message);
-        // })
-
-=======
 const ReviewUserPage = ({userId}) => {
     const [ reviewRecords, setReviewRecords] = useState([]);
 
@@ -72,7 +47,6 @@ const ReviewUserPage = ({userId}) => {
         .catch((err) => {
             console.error(err.message);
         })
->>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
     }, []);
 
     // const loginUser = ({ email, password }) => {
@@ -114,14 +88,6 @@ const ReviewUserPage = ({userId}) => {
 
     return (
         <Fragment>{
-<<<<<<< HEAD
-            !data || data.length === 0 
-                ?<div>No Data</div>
-                :data.map((reviewuserpage) => (
-                    <div>{reviewuserpage.author}
-                    <Rating name="read-only" value={1} readOnly />
-                    </div>
-=======
             !reviewRecords || reviewRecords.length === 0 
                 ?<div>No Data</div>
                 :reviewRecords.map((reviewuserpage) => (
@@ -133,7 +99,6 @@ const ReviewUserPage = ({userId}) => {
                         </div>
                         <Divider />
                     </>
->>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
                 ))
             }
         </Fragment>

@@ -11,17 +11,11 @@ import GameCollection from './GameCollection';
 const UserPage = () => {
   const [value, setValue] = React.useState('1');
   const [user, setUser] = React.useState({});
-<<<<<<< HEAD
-
-  useEffect(() => {
-    let userId = localStorage.getItem('userId');
-=======
   const [userId, setUserId] = React.useState(() => {
     return localStorage.getItem('userId');
   });
 
   useEffect(() => {
->>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
     console.log('userId', userId);
 
     fetch(
@@ -58,11 +52,7 @@ const UserPage = () => {
     <main>
       <div>
         <h1 class="userT">User Page</h1>
-<<<<<<< HEAD
-        <Box class="box" sx={{ width: '100%', typography: 'body1' }}>
-=======
         <Box class="box" sx={{ width: '100%', typography: 'body1'}}>
->>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
           <TabContext value={value}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
               <TabList
@@ -78,11 +68,7 @@ const UserPage = () => {
               <Profile user={user}/>
             </TabPanel>
             <TabPanel value="2">
-<<<<<<< HEAD
-              <ReviewUserPage />
-=======
               <ReviewUserPage userId={userId}/>
->>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
             </TabPanel>
             <TabPanel value="3">
               <GameCollection />

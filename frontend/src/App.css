@@ -3,10 +3,7 @@
   position: fixed;
   background-size: cover;
   margin-top: 5vh;
-<<<<<<< HEAD
-=======
   z-index: -1;
->>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
 }
 
 .HomeTitle{
@@ -21,11 +18,6 @@
   font-family: cursive;
   padding-left: 1em;
   padding-right: 100%;
-<<<<<<< HEAD
-  z-index: 6;
-}
-
-=======
   margin: auto;
   z-index: 6;
 }
@@ -43,7 +35,6 @@
   border-top-right-radius: 20px;
 }
 
->>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
 /* css for the navbar */
 .Navbar{
   top: 14vh;
@@ -110,11 +101,7 @@ footer{
   
 } */
 
-<<<<<<< HEAD
-form{
-=======
 #searchForm{
->>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
   top: 27vh;
   position: fixed;
   display: flex;
@@ -209,11 +196,7 @@ input{
   
 } */
 
-<<<<<<< HEAD
-form{
-=======
 /* form{
->>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
   top: 27vh;
   position: fixed;
   display: flex;
@@ -288,11 +271,7 @@ a:hover{
 }
 
 /* gameList */
-<<<<<<< HEAD
-.card{
-=======
 .cardgames{
->>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
   color: #420098;
   margin-left: 10vh;
   margin-right: 10vh;
@@ -347,12 +326,8 @@ a:hover{
   padding-right: 100%;
   padding-top: 1vh;
   padding-bottom: 2vh;
-<<<<<<< HEAD
-  z-index: 5;
-=======
   z-index: 8;
 
->>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
 }
 
 .box{
@@ -384,8 +359,6 @@ a:hover{
   position: fixed;
   top: auto;
   z-index: -1;
-<<<<<<< HEAD
-=======
 }
 
 .UserB{
@@ -408,5 +381,4 @@ a:hover{
   padding-right: 100%;
   margin: auto;
   z-index: 6;
->>>>>>> c717a172a6f9ad952b9539ccb74d4ddd31a78461
 }
