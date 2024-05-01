@@ -1,8 +1,8 @@
 input{
-    background-color: transparent;
+    /* background-color: transparent; */
+    
     border: none;
     height: 100%;
-    
 }
 input:focus{
     outline: none;
