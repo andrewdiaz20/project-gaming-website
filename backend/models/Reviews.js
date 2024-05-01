@@ -15,7 +15,7 @@ const ReviewSchema = new mongoose.Schema({
         required:true
     },
     rating: {
-        type: String,
+        type: Number,
         required:true
     },
     date: {
@@ -27,7 +27,6 @@ const ReviewSchema = new mongoose.Schema({
         required:true
     },
 
-
 })
 
-module.exports = mongoose.model('Comments',ReviewSchemaSchema)
+module.exports = mongoose.model('Review',ReviewSchema)
