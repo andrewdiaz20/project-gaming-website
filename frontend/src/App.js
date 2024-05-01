@@ -1,26 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
 import './App.css';
 import RandomGame from './Components/RandomGame';
 import Home from './Components/Home';
-import Login from './Components/Login'
-import GameListPage from './Components/GameListPage'
+import Login from './Components/Login';
+import GameListPage from './Components/GameListPage';
 import SignUp from './Components/Signup';
 import UserPage from './Components/UserPage';
 import Navbar from './Components/Navigation';
 import GameList from './Components/GameList';
 
-
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('isLoggedIn') === 'true');
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    localStorage.getItem('isLoggedIn') === 'true'
+  );
 
   const logout = () => {
     localStorage.removeItem('isLoggedIn');
     setIsLoggedIn(false);
-  }
+  };
 
-  const login = () => {
+  const login = ({ user }) => {
     localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('userId', user.id);
     setIsLoggedIn(true);
   };
 
@@ -29,23 +36,20 @@ function App() {
   }, []);
 
   return (
-    <div className='mainpage'>
+    <div className="mainpage">
       <Router>
-    <Navbar/>
-       <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='RandomGame' element={<RandomGame />} />
-          <Route path='GameList' element={<GameList />} />
-          <Route path='Login' element={<Login />} />
-          <Route path='SignUp' element={<SignUp />} />
-          <Route path='UserPage' element={<UserPage />} />
+        <Navbar isLoggedIn={isLoggedIn} logout={logout} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="RandomGame" element={<RandomGame />} />
+          <Route path="GameList" element={<GameList />} />
+          <Route path="Login" element={<Login login={login} />} />
+          <Route path="SignUp" element={<SignUp />} />
+          <Route path="UserPage" element={<UserPage />} />
         </Routes>
-
       </Router>
     </div>
-  )
-
+  );
 }
-
 
 export default App;
