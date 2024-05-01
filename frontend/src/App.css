@@ -37,9 +37,9 @@
 
 /* css for the navbar */
 .Navbar{
-  top: 14vh;
+  /* top: 14vh; */
   display: flex;
-  position: fixed;
+  /* position: fixed; */
   z-index: 6;
 }
 
@@ -92,6 +92,20 @@ footer{
   padding-right: 100%;
 }
 
+.headerTitle{
+  font-stretch: 100%;
+  font-family: cursive;
+  color:#FFEEF2;
+  border: 1px solid  #8D5DF5;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #8D5DF5;
+  padding-bottom: 2vh;
+  padding-top: 2vh;
+  padding-left: 1em;
+  margin: auto;
+}
+
 /* input{
   display: flex;
   flex-direction: row;
@@ -101,7 +115,7 @@ footer{
   
 } */
 
-form{
+#searchForm{
   top: 27vh;
   position: fixed;
   display: flex;
@@ -138,10 +152,10 @@ li a {
   border-radius: 1em;
   text-decoration: none;
   border: 3px solid #420098;
-  padding-left: 3em;
-  padding-right: 3em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
   color:#420098;
-  margin-left: 10vh;
+  margin-left: 20px;
   display:flex;
   background-color: #FFEEF2;
 }
@@ -196,7 +210,7 @@ input{
   
 } */
 
-form{
+/* form{
   top: 27vh;
   position: fixed;
   display: flex;
@@ -211,7 +225,7 @@ form{
   padding-bottom: 3vh;
   background-color: rgba(0,0,0,0.5);
   border-radius: 12px;
-}
+} */
 
 .loginlinks{
   position: fixed;
@@ -231,9 +245,9 @@ form{
 }
 
 .navbarlogin{
-  top: 10vh;
+  /* top: 10vh;
   display: flex;
-  position: fixed;
+  position: fixed; */
   /* flex-wrap: wrap;
   position: fixed;
   flex-direction: row;
@@ -271,8 +285,8 @@ a:hover{
   color: #420098;
   margin-left: 10vh;
   margin-right: 10vh;
-  margin-top: 25vh;
-  margin-bottom: 20vh;
+  margin-top: 20px;
+  margin-bottom: 20px;
   background-color: #FFE4F3;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -327,9 +341,9 @@ a:hover{
 }
 
 .box{
-  margin-top: 20vh;
+  /* margin-top: 20vh; */
   color: #120522;
-  background-size: cover;
+  /* background-size: cover; */
 }
 
 /* Signup */
@@ -377,4 +391,35 @@ a:hover{
   padding-right: 100%;
   margin: auto;
   z-index: 6;
+}
+
+
+
+.header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.content{
+  padding-top: 120px;
+  padding-left: 20px;
+  padding-left: 20px;
+}
+
+.input-wrapper{
+  display: flex;
+}
+
+.contentBackground{
+  position: fixed;
+  z-index: -5;
+  margin-bottom: 50vh;
+}
+
+.loginContainer{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
 }

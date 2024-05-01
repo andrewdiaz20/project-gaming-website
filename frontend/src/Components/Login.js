@@ -63,14 +63,22 @@ const Login = ({ login }) => {
 
   return (
     <main>
+<<<<<<< HEAD
         <div>
             <img className='logininpic' src='1015937.jpg' alt='Halo'></img>
         </div>
     <div className={'mainContainer'}>
       <div className={'titleContainer'}>
+=======
+        {/* <div>
+            <img className='logininpic' src='1015937.jpg' alt='Halo'></img>
+        </div> */}
+    <div className={'loginContainer'}>
+      {/* <div className={'titleContainer'}>
+>>>>>>> 017776e24c967599f7e4cee4f49c769921b7363d
         <h1 className="LoginTitle">Login</h1>
-      </div>
-      <form onSubmit={handleSubmit}>
+      </div> */}
+      <form onSubmit={handleSubmit} >
         <FormSection title="User Name">
           <InputField
             // type="email"
@@ -108,7 +116,10 @@ const Login = ({ login }) => {
 
       </form>
     </div>
+<<<<<<< HEAD
     <footer></footer>
+=======
+>>>>>>> 017776e24c967599f7e4cee4f49c769921b7363d
     </main>
   );
 };

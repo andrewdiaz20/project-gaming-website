@@ -1,21 +1,23 @@
 const mongoose = require('mongoose')
+const ObjectId = require('mongodb').ObjectId;
 
 const FavoritedGameSchema = new mongoose.Schema({
-    id: {
-        type: String,
-        required:true
-    },
     gameId: {
+        type: ObjectId,
+        required:true,
+        default: ""
+    },
+    externalGameId: {
         type: String,
         required:true,
         default: ""
     },
     userId: {
-        type: String,
+        type: ObjectId,
         required:true
     },
 
 
 })
 
-module.exports = mongoose.model('Comments',FavoritedGameSchema)
+module.exports = mongoose.model('FavoritedGame',FavoritedGameSchema)

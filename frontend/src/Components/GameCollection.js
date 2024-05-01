@@ -28,7 +28,9 @@ const rows = [
   // },
 ];
 
-const GameCollection = () => {
+const GameCollection = ({userId}) => {
+  
+
   return (
     <DataGrid
       rows={rows}

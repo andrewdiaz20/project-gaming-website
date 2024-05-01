@@ -6,6 +6,7 @@ const {
     SearchResults,
     SearchResultsArtWork,
     get1Games,
+    favoriteGame
 } = require('../controllers/Game')
 
 //get 10 Games
@@ -16,5 +17,7 @@ router.post('/get10', get10Games)
 router.post('/search', SearchResults)
 //get 1 games
 router.post('/get1', get1Games)
+
+router.post('/favoriteGame', favoriteGame);
 
 module.exports = router
