@@ -32,9 +32,9 @@ function Navbar({ isLoggedIn, logout }) {
                   Logout
                 </a>
               </li>
-              {/* <li>
+              <li>
                 <a href="UserPage">Profile</a>
-              </li> */}
+              </li>
             </>
           ) : (
             <li>

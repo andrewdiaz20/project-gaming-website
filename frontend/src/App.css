@@ -37,10 +37,10 @@
 
 /* css for the navbar */
 .Navbar{
-  top: 14vh;
+  /* top: 14vh;
   display: flex;
   position: fixed;
-  z-index: 6;
+  z-index: 6; */
 }
 
 ul{
@@ -101,7 +101,7 @@ footer{
   
 } */
 
-form{
+#searchForm{
   top: 27vh;
   position: fixed;
   display: flex;
@@ -196,7 +196,7 @@ input{
   
 } */
 
-form{
+/* form{
   top: 27vh;
   position: fixed;
   display: flex;
@@ -211,7 +211,7 @@ form{
   padding-bottom: 3vh;
   background-color: rgba(0,0,0,0.5);
   border-radius: 12px;
-}
+} */
 
 .loginlinks{
   position: fixed;

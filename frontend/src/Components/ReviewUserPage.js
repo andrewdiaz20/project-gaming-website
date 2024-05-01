@@ -1,5 +1,6 @@
-import { useEffect, Fragment } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import Rating from '@mui/material/Rating';
+import Divider from '@mui/material/Divider';
 
 const data = [
     // {
@@ -25,24 +26,27 @@ const data = [
     // }
 ]
 
-const ReviewUserPage = () => {
+const ReviewUserPage = ({userId}) => {
+    const [ reviewRecords, setReviewRecords] = useState([]);
 
     useEffect(() => {
-
-        let userId = localStorage.getItem('userId');
-
-        // fetch(`${process.env.REACT_APP_BACKEND_URL}/api/review/getReviewsByUser?userId=${userId}`, {
-        //   method: 'GET',
-        //   headers: {
-        //     'Content-Type': 'application/json', // Set to 'application/json'
-        //   },
-        // }).then((resp) => {
-        //     console.log('reviews', resp)
-        // })
-        // .catch((err) => {
-        //     console.error(err.message);
-        // })
-
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/api/userreview/getReviewsByUser?userId=${userId}`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json', // Set to 'application/json'
+          },
+        }).then((resp) => {
+            return resp.json();
+        })
+        .then((data) => {
+            console.log('reviews', data);
+            if(data){
+                setReviewRecords(data.reviews);
+            }
+        })
+        .catch((err) => {
+            console.error(err.message);
+        })
     }, []);
 
     // const loginUser = ({ email, password }) => {
@@ -84,12 +88,17 @@ const ReviewUserPage = () => {
 
     return (
         <Fragment>{
-            !data || data.length === 0 
+            !reviewRecords || reviewRecords.length === 0 
                 ?<div>No Data</div>
-                :data.map((reviewuserpage) => (
-                    <div>{reviewuserpage.author}
-                    <Rating name="read-only" value={1} readOnly />
-                    </div>
+                :reviewRecords.map((reviewuserpage) => (
+                    <>
+                        <div>
+                            {/* {reviewuserpage.author} */}
+                           <div><Rating name="read-only" value={reviewuserpage.rating} readOnly /></div>
+                           <div>Comment: {reviewuserpage.content}</div>
+                        </div>
+                        <Divider />
+                    </>
                 ))
             }
         </Fragment>

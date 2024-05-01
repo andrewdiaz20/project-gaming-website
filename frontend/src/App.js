@@ -41,7 +41,7 @@ function App() {
           <Route path='RandomGame' element={<RandomGame />} />
           <Route path='GameListPage' element={<GameListPage/>}/>
           <Route path='GameList' element={<GameList />} />
-          <Route path='Login' element={<Login />} />
+          <Route path='Login' element={<Login login={login}/>} />
           <Route path='SignUp' element={<SignUp />} />
           <Route path='UserPage' element={<UserPage />} />
           <Route path='game/:id' element={<GameListPage/>}/>

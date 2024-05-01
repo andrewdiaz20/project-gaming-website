@@ -11,9 +11,11 @@ import GameCollection from './GameCollection';
 const UserPage = () => {
   const [value, setValue] = React.useState('1');
   const [user, setUser] = React.useState({});
+  const [userId, setUserId] = React.useState(() => {
+    return localStorage.getItem('userId');
+  });
 
   useEffect(() => {
-    let userId = localStorage.getItem('userId');
     console.log('userId', userId);
 
     fetch(
@@ -50,7 +52,7 @@ const UserPage = () => {
     <main>
       <div>
         <h1 class="userT">User Page</h1>
-        <Box class="box" sx={{ width: '100%', typography: 'body1' }}>
+        <Box class="box" sx={{ width: '100%', typography: 'body1'}}>
           <TabContext value={value}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
               <TabList
@@ -66,7 +68,7 @@ const UserPage = () => {
               <Profile user={user}/>
             </TabPanel>
             <TabPanel value="2">
-              <ReviewUserPage />
+              <ReviewUserPage userId={userId}/>
             </TabPanel>
             <TabPanel value="3">
               <GameCollection />
