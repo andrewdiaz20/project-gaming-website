@@ -1,8 +1,10 @@
-const Comment = require('../models/Comments')
+const Comments = require('../models/Comments')
 const { default: axios } = require('axios')
+
+
 async function getAllComments(req, res){
     try {
-        const comments = await Comment.find()
+        const comments = await Comments.find()
         res.json(comments)
     } catch (error) {
         console.log('error fetching all comments', error)
@@ -13,8 +15,8 @@ async function getAllComments(req, res){
 async function getCommentById(req, res){
     try {
         const { id } = req.params
-        const comment = await Comment.findById(id)
-        res.status().json(comment)
+        const comment = await Comments.findById(id)
+        res.json(comment)
     } catch (error) {
         console.log('error fetching animal', error)
         res.status(500).json({message: 'error fetching comment'})
@@ -24,7 +26,7 @@ async function getCommentById(req, res){
 async function createComment(req,res) {
     try {
         if (!req.body.profilePicture) req.body.profilePicture = undefined
-        const comment = await new Comment(req.body)
+        const comment = await new Comments(req.body).save()
     } catch (error) {
         console.log('error creating comment', error)
         res.status(500).json({message: 'error creating comment'})
@@ -32,6 +34,6 @@ async function createComment(req,res) {
 }
 
 module.exports = {
-    getAllAnimals, getCommentById,
+    getAllComments, getCommentById,
     createComment
 }

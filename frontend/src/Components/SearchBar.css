@@ -2,10 +2,7 @@ input{
     /* background-color: transparent; */
     
     border: none;
-    border: 1px red solid;
     height: 100%;
-
-    padding-top: 50px;
     
 }
 input:focus{
