@@ -76,40 +76,46 @@ const GameList = () => {
   const favoriteGames = (game) => {
     console.log('favorited', game);
 
+    if (game.favorited === true) {
+      return;
+    }
+
     fetch(`${process.env.REACT_APP_BACKEND_URL}/games/favoriteGame`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json', // Set to 'application/json'
-        },
-        body: JSON.stringify({
-            name : game.name,
-            externalGameId : game.id,
-            userId: userId,
-        }),
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json', // Set to 'application/json'
+      },
+      body: JSON.stringify({
+        name: game.name,
+        externalGameId: game.id,
+        userId: userId,
+        description: game.summary,
+      }),
+    })
+      .then((resp) => {
+        console.log(resp);
+        if (!resp.ok) {
+          //If the response status code is not OK, throw an error to catch it later
+          throw new Error('Network response was not ok');
+        }
+
+        return resp.json(); //Parse JSON only if the response status code is OK
       })
-        .then((resp) => {
-          console.log(resp);
-          if (!resp.ok) {
-            //If the response status code is not OK, throw an error to catch it later
-            throw new Error('Network response was not ok');
-          }
+      .then((data) => {
+        console.log(data);
+        if (data.error) {
+          alert(data.error);
+        } else {
+          alert('Game added to favorite');
+          fetchGames();
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        alert('Login Failed. Please check your Username and Password.');
+      });
+  };
   
-          return resp.json(); //Parse JSON only if the response status code is OK
-        })
-        .then((data) => {
-          console.log(data);
-          if (data.error) {
-            alert(data.error);
-          } else {
-            alert('Game added to favorite');
-            fetchGames();
-          }
-        })
-        .catch((err) => {
-          console.error(err);
-          alert('Login Failed. Please check your Username and Password.');
-        });
-  }
   const handleCardClick = (gameName) => {
     navigate(`/gameListPage/${gameName}`); // Navigate to game detail page
   };
@@ -124,16 +130,18 @@ const GameList = () => {
                 </div>
         {games.map((game, index) => (
           <Card className="cardgames" key={game.name} sx={{ maxWidth: 800 }}>
+            <div style={{position: 'relative'}}>
             {/* your goal on line 55, 
                                 you want to figure out how to provide an argument (the id of the game) to handleCardClick 
                                 things to note:
                                     you are not calling handleCardClick
                                     handleCardClick is a callback function, meaning is is called by the browser when this element is clicked.                         
                         */}
-            <CardActionArea id="games"  onClick={() => handleCardClick(game.name)}>
-              <IconButton sx={{ position: 'absolute', right: 0 }} onClick={() => { favoriteGames(game)}}>
-                { game.favorited === true ? <FavoriteIcon/> : <FavoriteBorderIcon /> }
+                        <IconButton sx={{ position: 'absolute', right: 0, top: 0, zIndex: 30 }} onClick={() => { favoriteGames(game)}}>
+                { game.favorited === true ? <FavoriteIcon color='info'/> : <FavoriteBorderIcon color='info'/> }
               </IconButton>
+            <CardActionArea id="games"  onClick={() => handleCardClick(game.name)}>
+              
               <CardMedia
                 component="img"
                 height="140"
@@ -153,6 +161,7 @@ const GameList = () => {
                 </Typography>
               </CardContent>
             </CardActionArea>
+            </div>
           </Card>
         ))}
       </div>

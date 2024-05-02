@@ -7,6 +7,7 @@ import {
   Container,
   InputAdornment,
   FormHelperText,
+  Box,
 } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import Edit from '@mui/icons-material/Edit';
@@ -65,80 +66,84 @@ const Profile = ({ user }) => {
 
   return (
     <main>
-    <Fragment>
-      <form onSubmit={submitHandler} style={{ backgroundColor: 'white' }}>
-        <TextField
-          label="Member Since"
-          fullWidth
-          margin="dense"
-          size="small"
-          readOnly
-          value={createdDate}
-        />
+      <Fragment>
+        <Box sx={{ maxWidth: '500px' }}>
+          <div></div>
+          <form onSubmit={submitHandler} style={{ backgroundColor: 'white' }}>
+            <TextField
+              label='Member Since'
+              fullWidth
+              margin='dense'
+              size='small'
+              readOnly
+              value={createdDate}
+            />
 
-        <TextField
-          label="Location"
-          fullWidth
-          margin="dense"
-          size="small"
-          readOnly={!isEdit}
-          value={location}
-          onChange={(e) => {
-            setLocation(e.target.value);
-          }}
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={(e) => {
-                    setIsEdit(true);
-                  }}
-                  // onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                >
-                  {!isEdit && <Edit />}
-                </IconButton>
-              </InputAdornment>
-            ),
-          }}
-        />
+            <TextField
+              label='Location'
+              fullWidth
+              margin='dense'
+              size='small'
+              readOnly={!isEdit}
+              value={location}
+              onChange={(e) => {
+                setLocation(e.target.value);
+              }}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position='end'>
+                    <IconButton
+                      aria-label='toggle password visibility'
+                      onClick={(e) => {
+                        setIsEdit(true);
+                      }}
+                      // onMouseDown={handleMouseDownPassword}
+                      edge='end'
+                    >
+                      {!isEdit && <Edit />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
+            />
 
-        <TextField
-          label="About Me"
-          fullWidth
-          margin="dense"
-          size="small"
-          readOnly={!isEdit}
-          value={about}
-          onChange={(e) => {
-            setAbout(e.target.value);
-          }}
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={(e) => {
-                    setIsEdit(true);
-                  }}
-                  // onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                >
-                  {!isEdit && <Edit />}
-                </IconButton>
-              </InputAdornment>
-            ),
-          }}
-        />
-        {isEdit && (
-          <Button type="submit" variant="contained" sx={{ mt: '10px' }}>
-            Save
-          </Button>
-        )}
-      </form>
-    </Fragment>
-    <footer></footer>
+            <TextField
+              label='About Me'
+              fullWidth
+              margin='dense'
+              size='small'
+              readOnly={!isEdit}
+              value={about}
+              onChange={(e) => {
+                setAbout(e.target.value);
+              }}
+              multiline
+              maxRows={4}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position='end'>
+                    <IconButton
+                      aria-label='toggle password visibility'
+                      onClick={(e) => {
+                        setIsEdit(true);
+                      }}
+                      // onMouseDown={handleMouseDownPassword}
+                      edge='end'
+                    >
+                      {!isEdit && <Edit />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
+            />
+            {isEdit && (
+              <Button type='submit' variant='contained' sx={{ mt: '10px' }}>
+                Save
+              </Button>
+            )}
+          </form>
+        </Box>
+      </Fragment>
     </main>
   );
 };

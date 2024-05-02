@@ -148,16 +148,14 @@ async function RandomGame(req,res){
 
 async function favoriteGame(req, res) {
     console.log('favorite called', req.body);
-
-    const {
-      name,
-      externalGameId,
-      userId
-    } = req.body;
-
+  
+    const { name, externalGameId, userId, description } = req.body;
+    console.log('description', description);
+  
     const game = new VideoGames({
-        VideoGames_name: name,
-        externalGameId,
+      VideoGames_name: name,
+      externalGameId,
+      VideoGames_description: description,
     });
   
     try {
@@ -167,10 +165,10 @@ async function favoriteGame(req, res) {
           externalGameId,
           userId: new ObjectId(userId),
         });
-
+  
         await favoritedGame.save();
       });
-
+  
       res.json({ success: true });
     } catch (error) {
       res.json({ success: false, message: error.message });

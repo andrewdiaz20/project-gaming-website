@@ -9,6 +9,8 @@ const {
     favoriteGame
 } = require('../controllers/Game')
 
+const { getFavoritedGameByUser } = require('../controllers/FavoritedGames');
+
 //get 10 Games
 router.post('/get10', get10Games)
 //Artwork
@@ -19,5 +21,6 @@ router.post('/search/:searchTerm', SearchResults)
 router.post('/get1', get1Games)
 
 router.post('/favoriteGame', favoriteGame);
+router.get('/getFavoritedGameByUser', getFavoritedGameByUser);
 
 module.exports = router

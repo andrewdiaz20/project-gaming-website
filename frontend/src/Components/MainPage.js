@@ -4,25 +4,25 @@ import SearchBar from './SearchBar';
 import { useLocation } from 'react-router-dom';
 
 const navmenu = [
-    {
-        title: 'GameGlance',
-        path: '/',
-    },
-    {
-        title: 'Game List',
-        path: '/GameList',
-    },
-    {
-        title: 'Login',
-        path: '/Login',
-    },
-    {
-        title: 'Signup',
-        path: '/Signup',
-    },
-    {
-      title: 'User Page',
-      path: '/userpage',
+  {
+    title: 'GameGlance',
+    path: '/',
+  },
+  {
+    title: 'Game List',
+    path: '/GameList',
+  },
+  {
+    title: 'Login',
+    path: '/login',
+  },
+  {
+    title: 'Signup',
+    path: '/signup',
+  },
+  {
+    title: 'User Page',
+    path: '/userpage',
   },
 ];
 
@@ -30,7 +30,8 @@ const MainPage = ({ isLoggedIn, logout }) => {
   const location = useLocation();
   const { pathname } = location;
 
-  let currentMenu = () => navmenu.find((e) => e.path === pathname);
+  let currentMenu = () =>
+    navmenu.find((e) => e.path.toLowerCase() === pathname.toLowerCase());
 
   return (
     <div>
@@ -41,9 +42,23 @@ const MainPage = ({ isLoggedIn, logout }) => {
         <Navbar isLoggedIn={isLoggedIn} logout={logout} />
       </div>
       {/* <SearchBar/> */}
-      {pathname === '/Login' && <img className="contentBackground" src="1015937.jpg" alt="Halo"></img>}
-      {pathname === '/' && <img className='homescreenbackground'src="video-games-collage-wide-2048x1152.jpg" alt="multiple-game-picture"/>}
-      {pathname === '/GameList' && <img className='background2' src='wp3146100.jpg' alt='witcher 3 background' />}
+      {(pathname === '/login' || pathname === '/signup') && (
+        <img className="contentBackground" src="1015937.jpg" alt="Halo"></img>
+      )}
+      {pathname === '/' && (
+        <img
+          className="homescreenbackground"
+          src="video-games-collage-wide-2048x1152.jpg"
+          alt="multiple-game-picture"
+        />
+      )}
+      {pathname === '/GameList' && (
+        <img
+          className="background2"
+          src="wp3146100.jpg"
+          alt="witcher 3 background"
+        />
+      )}
 
       <div className="content">
         <Outlet />
