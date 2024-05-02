@@ -20,7 +20,6 @@ import IconButton from '@mui/material/IconButton';
 //       setIsClicked(!isClicked);
 //     }
 
-
 const GameList = () => {
   const [games, setGames] = useState([]);
   const location = useLocation();
