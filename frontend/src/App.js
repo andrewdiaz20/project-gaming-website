@@ -14,6 +14,7 @@ import TempSearch from './Components/TempSearchPage';
 import NewReview from './Components/NewReview';
 import MainPage from './Components/MainPage';
 
+
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(
     localStorage.getItem('isLoggedIn') === 'true'
@@ -47,6 +48,7 @@ function App() {
             <Route path='UserPage' element={<UserPage />} />
             <Route path='TempSearch' element={<TempSearch />} />
             <Route path='TempReview' element={<NewReview />} />
+            <Route path='GameListPage/:name' element={<GameListPage />} />
           </Route>
         </Routes>
       </Router>

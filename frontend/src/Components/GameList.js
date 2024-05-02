@@ -23,6 +23,7 @@ import IconButton from '@mui/material/IconButton';
 const GameList = () => {
   const [games, setGames] = useState([]);
   const location = useLocation();
+  const navigate = useNavigate();
   const [userId, setUserId] = React.useState(() => {
     return localStorage.getItem('userId');
   });
@@ -109,7 +110,9 @@ const GameList = () => {
           alert('Login Failed. Please check your Username and Password.');
         });
   }
-
+  const handleCardClick = (gameName) => {
+    navigate(`/gameListPage/${gameName}`); // Navigate to game detail page
+  };
   return (
     <main>
       <div>
@@ -120,14 +123,14 @@ const GameList = () => {
                     <h1 className='GameListT'>GameList</h1>
                 </div> */}
         {games.map((game, index) => (
-          <Card className="cardgames" key={game.id} sx={{ maxWidth: 800 }}>
+          <Card className="cardgames" key={game.name} sx={{ maxWidth: 800 }}>
             {/* your goal on line 55, 
                                 you want to figure out how to provide an argument (the id of the game) to handleCardClick 
                                 things to note:
                                     you are not calling handleCardClick
                                     handleCardClick is a callback function, meaning is is called by the browser when this element is clicked.                         
                         */}
-            <CardActionArea id="games">
+            <CardActionArea id="games"  onClick={() => handleCardClick(game.name)}>
               <IconButton sx={{ position: 'absolute', right: 0 }} onClick={() => { favoriteGames(game)}}>
                 { game.favorited === true ? <FavoriteIcon/> : <FavoriteBorderIcon /> }
               </IconButton>

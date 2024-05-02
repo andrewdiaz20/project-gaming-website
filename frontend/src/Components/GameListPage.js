@@ -6,41 +6,45 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import { useParams } from "react-router-dom";
+import NewReview from "./NewReview";
 
 const GameListPage = () => {
   const [games, setGames] = useState([]);
+  const {name} = useParams();
 
   useEffect(() => {
-    async function fetchId() {
-      const url = `${process.env.REACT_APP_BACKEND_URL}/games/get1`
-      const options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
+    fetchGames(name);
+  }, [name]);
 
-      console.log(url)
-      console.log(options)
-      const response = await fetch(url, options)
-      const data = await response.json()
-      console.log(data)
-      console.log('yes')
-      setGames(data)
+
+  const fetchGames = async (gameName) => {
+    const url = `${process.env.REACT_APP_BACKEND_URL}/games/search/${name}`;
+    const response = await fetch(url, {
+      method: 'POST', // Use POST method
+      headers: {
+        'Content-Type': 'application/json', // Specify JSON content type
+      },
+      body: JSON.stringify({ name: gameName }) // Send game name in the request body
+    });
+    const data = await response.json();
+    if (data.length > 0) {
+      setGames(data[0]); // Assuming the API returns an array of games, and you take the first one
+    } else {
+      // Handle no data returned
+      console.log("No games found");
     }
-    fetchId()
-  }, [])
+  }
+  
+  
   return (
     <main>
-      <div className='GameListPT'>
-        <h1>Game Card</h1>
-      </div>
-      <Card className="cardgames" key={games.id} sx={{ maxWidth: 800 }}>
-        <CardActionArea >
+            <Card className="cardgames" sx={{ maxWidth: 800 }}>
+        <CardActionArea>
           <CardMedia
             component="img"
             height="140"
-            image={games.image || "/static/images/cards/default.jpg"}
+            image={games.cover || "/static/images/cards/default.jpg"} // Assuming 'cover' is the key for image URL
             alt={games.name}
           />
           <CardContent>
@@ -50,10 +54,10 @@ const GameListPage = () => {
             <Typography variant="body2" fontSize="0.5rem" color="text.secondary">
               {games.summary}
             </Typography>
+            <NewReview></NewReview>
           </CardContent>
         </CardActionArea>
       </Card>
-      <footer></footer>
     </main>
   )
 }
