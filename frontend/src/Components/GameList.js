@@ -119,9 +119,9 @@ const GameList = () => {
         <div>
           {/* <img className='background2' src='wp3146100.jpg' alt='witcher 3 background' /> */}
         </div>
-        {/* <div>
+        <div>
                     <h1 className='GameListT'>GameList</h1>
-                </div> */}
+                </div>
         {games.map((game, index) => (
           <Card className="cardgames" key={game.name} sx={{ maxWidth: 800 }}>
             {/* your goal on line 55, 

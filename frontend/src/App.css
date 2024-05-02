@@ -1,9 +1,29 @@
+.ReviewPT{
+  color: #FFEEF2;
+  position: fixed;
+  top: 0;
+  border: 1px solid #8D5DF5;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #8D5DF5;
+  font-stretch: 100%;
+  font-family: cursive;
+  padding-left: 1em;
+  padding-right: 100%;
+  margin: auto;
+  z-index: 6;
+}
+
+.ReviewCSS{
+  color: #8D5DF5;
+}
 
 .homescreenbackground{
   position: fixed;
   background-size: cover;
-  margin-top: 5vh;
+  margin-top: 0em;
   z-index: -1;
+  margin-bottom: 5em;
 }
 
 .HomeTitle{
@@ -62,7 +82,7 @@ ul{
   display:flex;
 } */
 
-footer{
+#footer{
   border-radius: 1em;
   color:#1b1b1b;
   bottom: 0;
@@ -71,7 +91,7 @@ footer{
   padding-top: 0%;
   padding-right: 100%;
   padding-bottom: 18vh;
-  /* margin-bottom: 0%; */
+  margin-bottom: 0%;
   position: fixed;
   bottom: 0;
 }
@@ -90,9 +110,10 @@ footer{
   position: fixed;
   margin: auto;
   padding-right: 100%;
+  bottom: 6em;
 }
 
-.headerTitle{
+/* .headerTitle{
   font-stretch: 100%;
   font-family: cursive;
   color:#FFEEF2;
@@ -104,7 +125,7 @@ footer{
   padding-top: 2vh;
   padding-left: 1em;
   margin: auto;
-}
+} */
 
 /* input{
   display: flex;
@@ -183,20 +204,17 @@ footer{
 }
 
 .LoginTitle{
-  color:#FFEEF2;
-  border: 1px solid  #8D5DF5;
+  color: #FFEEF2;
+  position: fixed;
+  top: 0;
+  border: 1px solid #8D5DF5;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
   background-color: #8D5DF5;
-  font-stretch: 100%;
   font-family: cursive;
-  padding-left: 1em;
-  margin-top: 0%;
-  position: fixed;
   margin: auto;
-  padding-right: 100%;
-  padding-bottom: 5vh;
-  padding-top: 1vh;
+  z-index: 0;
+
 }
 
 input{
@@ -210,7 +228,8 @@ input{
   
 } */
 
-/* form{
+.FormL{
+  color: #FFEEF2;
   top: 27vh;
   position: fixed;
   display: flex;
@@ -225,7 +244,7 @@ input{
   padding-bottom: 3vh;
   background-color: rgba(0,0,0,0.5);
   border-radius: 12px;
-} */
+}
 
 .loginlinks{
   position: fixed;
@@ -244,19 +263,19 @@ input{
   color: white;
 }
 
-.navbarlogin{
-  /* top: 10vh;
+/* .navbarlogin{
+  top: 10vh;
   display: flex;
-  position: fixed; */
-  /* flex-wrap: wrap;
+  position: fixed;
+  flex-wrap: wrap;s
   position: fixed;
   flex-direction: row;
   display: flex;
   list-style-type: none;
   justify-content: space-between;
   top: 15vh;
-  padding-right: 5vh; */
-}
+  padding-right: 5vh;
+} */
 
 .SubmitButton{
   position: fixed;
@@ -284,7 +303,7 @@ a:hover{
 .cardgames{
   color: #420098;
   margin-left: 10vh;
-  margin-right: 10vh;
+  margin-right: 10em;
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: #FFE4F3;
@@ -317,7 +336,7 @@ a:hover{
   position: fixed;
   z-index: -2;
   background-position: cover;
-  margin-top: -40vh;
+  margin-top: 0em;
 }
 
 /* user css */
@@ -357,17 +376,19 @@ a:hover{
   background-color: #8D5DF5;
   font-stretch: 100%;
   font-family: cursive;
-  margin-top: 0;
-  padding-left: 8vh;
+  padding-left: 1em;
   padding-right: 100%;
-  padding-top: 1vh;
-  padding-bottom: 2vh;
+  margin: auto;
   z-index: 5;
+}
+
+.signUpForm{
+  top: 17em;
 }
 
 .SignT{
   position: fixed;
-  top: auto;
+  top: 0;
   z-index: -1;
 }
 
@@ -396,17 +417,26 @@ a:hover{
 
 
 .header{
+  color: #FFEEF2;
   position: fixed;
   top: 0;
-  width: 100%;
-  z-index: 1000;
+  padding-bottom: 0em;
+  border: 1px solid #8D5DF5;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #8D5DF5;
+  font-stretch: 100%;
+  font-family: cursive;
+  padding-left: 1em;
+  padding-right: 5em;
+  z-index: 6;
 }
 
-.content{
+/* .content{
   padding-top: 120px;
   padding-left: 20px;
   padding-left: 20px;
-}
+} */
 
 .input-wrapper{
   display: flex;
@@ -418,8 +448,8 @@ a:hover{
   margin-bottom: 50vh;
 }
 
-.loginContainer{
+/* .loginContainer{
   display: flex;
   margin-left: auto;
   margin-right: auto;
-}
+} */

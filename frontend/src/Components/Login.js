@@ -63,13 +63,11 @@ const Login = ({ login }) => {
 
   return (
     <main>
-        {/* <div>
-            <img className='logininpic' src='1015937.jpg' alt='Halo'></img>
-        </div> */}
-    <div className={'loginContainer'}>
-      {/* <div className={'titleContainer'}>
-        <h1 className="LoginTitle">Login</h1>
+      {/* <div>
+        <h1 className='LoginTitle'>Login</h1>
       </div> */}
+    <div className={'loginContainer'}>
+      <div className='FormL'>
       <form onSubmit={handleSubmit} >
         <FormSection title="User Name">
           <InputField
@@ -107,6 +105,7 @@ const Login = ({ login }) => {
         </div>
 
       </form>
+      </div>
     </div>
     </main>
   );

@@ -63,6 +63,10 @@ function NewReview() {
     }
 
     return (
+        <main className="ReviewCSS">
+            <div>
+            <img src="halo-reach-3p.jpg" alt="helldivers 2"/>
+            </div>
         <div  style={{ margin: '10px', backgroundColor: '#f0f0f0', padding: '200px', borderRadius: '10px' }}>
             <h3>Leave us a Review</h3>
             <form onSubmit={handleSubmit} >
@@ -89,6 +93,7 @@ function NewReview() {
                 ))}
             </div>
         </div>
+        </main>
     )
 }
     export default NewReview

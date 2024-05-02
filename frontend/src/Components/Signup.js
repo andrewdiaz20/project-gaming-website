@@ -62,16 +62,16 @@ const SignUpForm = () => {
     <div className='SignT'>
             <img src='istockphoto-1325074732-2048x2048.jpg'alt='game'></img>
         </div>
-    <div className="mainContainer">
-      <div className="SignupT">
-        <h2>Sign Up</h2>
+    <div>
+      <div>
+        <h2 className="SignupT">Sign Up</h2>
       </div>
       {error && (
         <div className="errorContainer">
           <p>{error}</p>
         </div>
       )}
-      <form onSubmit={handleSubmit}>
+      <form class="signUpForm"onSubmit={handleSubmit}>
         <UserInformationForm
           firstName={formState.firstName}
           lastName={formState.lastName}
