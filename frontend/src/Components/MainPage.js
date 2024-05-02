@@ -63,7 +63,7 @@ const MainPage = ({ isLoggedIn, logout }) => {
       )}
       {compareStringCaseInsensitive(pathname, '/GameList') && (
         <img
-          className="background2"
+          className="contentBackground"
           src="wp3146100.jpg"
           alt="witcher 3 background"
         />

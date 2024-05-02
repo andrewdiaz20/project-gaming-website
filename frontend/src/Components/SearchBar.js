@@ -1,6 +1,8 @@
 import React ,{useState, handeleChange}from 'react'
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
+import { IconButton } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
 
 // import "./SearchBar.css"
 
@@ -79,9 +81,14 @@ const handleSubmit = async (e) => {
 return (
   <div className='input-wrapper'>
                 <div className="form">
-                <form onSubmit={handleSubmit}>
-                    <input onChange={handleChange} placeholder="Search Games" />
-                    <input type="submit" />
+                <form onSubmit={handleSubmit} style={{display: 'flex'}}>
+                    <input className='searchinput' onChange={handleChange} placeholder="Search Games" />
+                    {/* <input type="submit" /> */}
+
+                    <IconButton type='submit' sx={{padding: '3px'}} >
+                        <SearchIcon  sx={{height: '20px'}}/>
+                    </IconButton>
+
                 </form>
             </div>
       {/* <FaSearch id="searchIcon" />
