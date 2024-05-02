@@ -14,7 +14,7 @@ router.post('/get10', get10Games)
 //Artwork
 
 //get SearchResults
-router.post('/search', SearchResults)
+router.post('/search/:searchTerm', SearchResults)
 //get 1 games
 router.post('/get1', get1Games)
 

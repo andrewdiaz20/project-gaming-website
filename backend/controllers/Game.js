@@ -73,7 +73,8 @@ const ACCESS_TOKEN = process.env.REACT_APP_IGDB_ACCESS_TOKEN;
         */
 
 async function SearchResults(req,res){
-    const gameName = req.body.gameName;
+    //note : in req.body.name , name is the data object we want to retrive 
+    const searchString = req.body.name ;
     try {
         const VideoGames= await axios({
             url: 'https://api.igdb.com/v4/games',
@@ -83,14 +84,19 @@ async function SearchResults(req,res){
                 'Client-ID': CLIENT_ID,
                 'Authorization': `Bearer ${ACCESS_TOKEN}`
             },
-            data: `fields name, platforms.name, release_dates.date, summary; search ${gameName}; limit 30;`
-        })
+            data: `search "${searchString}"; fields name, cover.url, genres.name, platforms.name, summary; where version_parent = null; limit 10;`
+        });
+        if(VideoGames.data.length === 0){
+            return res.status(404).json({message: 'no matching games found'})
+        }
         res.json(VideoGames.data);
     } catch (error) {
-        console.log('error getting all VideoGamess', error)
-        res.status(500).json({message: `error geting poast requests`})
+        console.error('Error searching for games by name', error);
+        res.status(500).json({ message: 'Error searching for games' });
     }
+    
 }
+
 
 async function get1Games(req, res){
     const gameName = req.body.gameName;

@@ -1,14 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
-<<<<<<< HEAD
-=======
 import Button from '@mui/material';
->>>>>>> 017776e24c967599f7e4cee4f49c769921b7363d
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import { useHref, useNavigate } from 'react-router-dom';
+import { useHref, useNavigate, useLocation } from 'react-router-dom';
 
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -22,29 +19,11 @@ import IconButton from '@mui/material/IconButton';
 //     function handleClick() {
 //       setIsClicked(!isClicked);
 //     }
-import { useHref, useNavigate } from 'react-router-dom';
+
 
 const GameList = () => {
-<<<<<<< HEAD
-
-
-    const [games, setGames] = useState([]);
-
-    // function toAnotherPage(id){
-    //     useEffect(() => {
-    //         async function fetchIds() {
-    //           try {
-    //             const ids = await backend.getAllId();
-    //             return ids;
-    //           } catch (error) {
-    //             console.error("Error fetching ids:", error);
-    //           }
-    //         }
-    //         fetchIds();
-    //       }, []);
-    // }
-=======
   const [games, setGames] = useState([]);
+  const location = useLocation();
   const [userId, setUserId] = React.useState(() => {
     return localStorage.getItem('userId');
   });
@@ -64,9 +43,13 @@ const GameList = () => {
   // }
 
   useEffect(() => {
-    fetchGames();
-  }, []);
-
+    // Check if there are games passed in state
+    if (location.state && location.state.games) {
+      setGames(location.state.games);
+    } else {
+      fetchGames();
+    }
+  }, [location.state]);
 
   const fetchGames = async () => {
     const url = `${process.env.REACT_APP_BACKEND_URL}/games/get10`;
@@ -88,56 +71,8 @@ const GameList = () => {
     console.log('yes');
     setGames(data);
   }
->>>>>>> 017776e24c967599f7e4cee4f49c769921b7363d
 
 
-<<<<<<< HEAD
-            console.log(url)
-            console.log(options)
-            const response = await fetch(url, options)
-            const data = await response.json()
-            console.log(data)
-            console.log('yes')
-            setGames(data)
-        }
-        fetchData()
-    }, [])
-    return (
-        <main>
-            <div>
-                <div>
-                    <img className='background2' src='wp3146100.jpg' alt='witcher 3 background' />
-                </div>
-                <div>
-                    <h1 className='GameListT'>GameList</h1>
-                </div>
-                {games.map((game, index) => (
-
-                    <Card className="cardgames" key={game.id} sx={{ maxWidth: 800 }}>
-                        {/* your goal on line 55, 
-                                you want to figure out how to provide an argument (the id of the game) to handleCardClick 
-                                things to note:
-                                    you are not calling handleCardClick
-                                    handleCardClick is a callback function, meaning is is called by the browser when this element is clicked.                         
-                        */}
-                        <CardActionArea id="games">
-                            <CardMedia
-                                component="img"
-                                height="140"
-                                image={game.image || "/static/images/cards/default.jpg"}
-                                alt={game.name}
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="div">
-                                    {game.name}
-                                </Typography>
-                                <Typography variant="body2" fontSize="0.5rem" color="text.secondary">
-                                    {game.summary}
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
-=======
   const favoriteGames = (game) => {
     console.log('favorited', game);
 
@@ -175,7 +110,6 @@ const GameList = () => {
           alert('Login Failed. Please check your Username and Password.');
         });
   }
->>>>>>> 017776e24c967599f7e4cee4f49c769921b7363d
 
   return (
     <main>
@@ -224,8 +158,4 @@ const GameList = () => {
   );
 };
 
-<<<<<<< HEAD
-export default GameList
-=======
 export default GameList;
->>>>>>> 017776e24c967599f7e4cee4f49c769921b7363d
