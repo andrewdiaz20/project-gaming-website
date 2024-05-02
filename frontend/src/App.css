@@ -403,6 +403,8 @@ a:hover {
   z-index: -5;
   margin-bottom: 50vh;
   min-height: 100vh;
+  height: 100%;
+  width: 100%;
 }
 
 .loginContainer {
@@ -457,18 +459,4 @@ a:hover {
 
 .searchinput{
   height: 20px;
-}
-
-.gameBannerImageContainer {
-  height: 40vh;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  background: rgb(5, 0, 88);
-  background: linear-gradient(
-    0deg,
-    rgba(5, 0, 88, 1) 0%,
-    rgba(16, 16, 171, 1) 35%,
-    rgba(0, 212, 255, 1) 100%
-  );
 }
