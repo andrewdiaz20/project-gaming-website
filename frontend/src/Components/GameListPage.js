@@ -39,25 +39,23 @@ const GameListPage = ({userId}) => {
   
   return (
     <main>
-            <Card className="cardgames" sx={{ maxWidth: 800 }}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            height="140"
-            image={games.cover || "/static/images/cards/default.jpg"} // Assuming 'cover' is the key for image URL
-            alt={games.name}
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              {games.name}
-            </Typography>
-            <Typography variant="body2" fontSize="0.5rem" color="text.secondary">
-              {games.summary}
-            </Typography>
-            <NewReview game={games} userId={userId}></NewReview>
-          </CardContent>
-        </CardActionArea>
-      </Card>
+      <div className='gameBannerImageContainer'>
+        <img
+          className=''
+          src={(games.cover && games.cover.url) || '/game-console-6603120_1280.jpg'}
+          alt={games.name}
+        />
+      </div>
+
+      <Typography variant='h3' sx={{ pt: '20px', pb: '20px' }}>
+        {games.name}
+      </Typography>
+
+      <Typography variant='desription'>
+        {games.summary || 'No description available.'}
+      </Typography>
+
+      <NewReview game={games} userId={userId}></NewReview>
     </main>
   )
 }
