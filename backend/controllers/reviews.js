@@ -1,4 +1,7 @@
 const Review = require('../models/Reviews')
+const ObjectId = require('mongodb').ObjectId;
+const Game = require('../models/Game');
+
 async function getAllReviews(req, res){
     try {
         const reviews = await Review.find()
@@ -22,7 +25,34 @@ async function getReviewById(req, res){
 
 async function createReview(req,res) {
     try {
-        const review = await new Review(req.body).save()
+        let body = req.body;
+        const { userId, externalGameId, VideoGames_name, VideoGames_description } = req.body;
+        console.log('datas', userId, externalGameId, VideoGames_name, VideoGames_description);
+        
+        let existingGame = await Game.findOne({
+            externalGameId: externalGameId,
+        });
+
+        console.log('existingGame1', existingGame);
+
+        if (!existingGame) {
+          const game = new Game({
+            externalGameId: externalGameId,
+            VideoGames_name: VideoGames_name,
+            VideoGames_description: VideoGames_description
+          });
+      
+          existingGame = await game.save();
+          console.log('existingGame2', existingGame);
+        }
+
+        let reviewData = {
+            ...body,
+            author: userId,
+            userId: new ObjectId(userId),
+            gameId: existingGame._id,
+        }
+          const review = await new Review(reviewData).save()
         res.status(201).json(review)
     } catch (error) {
         console.log('error creating review', error)

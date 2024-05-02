@@ -9,7 +9,7 @@ import { CardActionArea } from '@mui/material';
 import { useParams } from "react-router-dom";
 import NewReview from "./NewReview";
 
-const GameListPage = () => {
+const GameListPage = ({userId}) => {
   const [games, setGames] = useState([]);
   const {name} = useParams();
 
@@ -54,7 +54,7 @@ const GameListPage = () => {
             <Typography variant="body2" fontSize="0.5rem" color="text.secondary">
               {games.summary}
             </Typography>
-            <NewReview></NewReview>
+            <NewReview game={games} userId={userId}></NewReview>
           </CardContent>
         </CardActionArea>
       </Card>

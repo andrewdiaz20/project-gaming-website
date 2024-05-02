@@ -24,10 +24,13 @@ const ReviewSchema = new mongoose.Schema({
         required:false
     },
     gameId: {
-        type: Number,
+        type: ObjectId,
         required:false
     },
-
+    externalGameId: {
+        type: String,
+        required:false
+    },
 })
 
 module.exports = mongoose.model('reviews',ReviewSchema)

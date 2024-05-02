@@ -94,6 +94,7 @@ const ReviewUserPage = ({userId}) => {
                     <>
                         <div>
                             {/* {reviewuserpage.author} */}
+                            <div>Game: {reviewuserpage.game?.VideoGames_name}</div>
                            <div><Rating name="read-only" value={reviewuserpage.rating} readOnly /></div>
                            <div>Comment: {reviewuserpage.content}</div>
                         </div>

@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
 
-function NewReview() {
+function NewReview({game, userId}) {
     const INITIAL_STATE = {
         rating: "",
         comment: "",
@@ -51,7 +51,13 @@ function NewReview() {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(newReview)
+            body: JSON.stringify({
+                ...newReview,
+                externalGameId: game.id,
+                VideoGames_name: game.name,
+                VideoGames_description: game.summary,
+                userId: userId,
+            })
         })
         if (response.status !== 201) console.log('ERROR:') // add error handling
         // navigate('/food/review') was replaced due to not refreshing the page when creating a new review. 
@@ -70,7 +76,7 @@ function NewReview() {
         <div  style={{ margin: '10px', backgroundColor: '#f0f0f0', padding: '200px', borderRadius: '10px' }}>
             <h3>Leave us a Review</h3>
             <form onSubmit={handleSubmit} >
-                <input className="form-2" onChange={handleChange} value={reviews.author} name="author" placeholder="author" />
+                {/* <input className="form-2" onChange={handleChange} value={reviews.author} name="author" placeholder="author" /> */}
                 <input className="form-2" onChange={handleChange} value={reviews.content} name="content" placeholder="content" type="textArea" />
                 <input className="form-1" onChange={handleChange} value={reviews.rating} name="rating" placeholder="rating" type="number" min={0} max={5} />
             
