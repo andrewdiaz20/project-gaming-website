@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 
 const Login = ({ login }) => {
   const [formState, setFormState] = useState({
@@ -67,8 +68,8 @@ const Login = ({ login }) => {
         <h1 className='LoginTitle'>Login</h1>
       </div> */}
     <div className={'loginContainer'}>
-      <div className='FormL'>
-      <form onSubmit={handleSubmit} >
+      <div className='formcontainer'>
+      <form onSubmit={handleSubmit} className='loginform'>
         <FormSection title="User Name">
           <InputField
             // type="email"
@@ -98,7 +99,7 @@ const Login = ({ login }) => {
           />
         </FormSection>
         <div className="inputContainer">
-          <input type="submit" value="Login" className="inputButton" />
+          <Button fullWidth type="submit" variant='contained' sx={{mt: '20px'}}>Login</Button>
         </div>
         <div className="inputContainer">
           <Link to="/signup">Create a new account</Link>

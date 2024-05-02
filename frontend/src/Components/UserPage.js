@@ -51,7 +51,7 @@ const UserPage = () => {
   return (
     <main>
       <div>
-        <Box class="box" sx={{ width: '100%', typography: 'body1'}}>
+        <Box class="box" sx={{ width: '100%', typography: 'body1',  backgroundColor: 'rgba(255, 255, 255, 0.5)'}}>
           <TabContext value={value}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
               <TabList

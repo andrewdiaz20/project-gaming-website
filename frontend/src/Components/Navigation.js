@@ -16,7 +16,7 @@ function Navbar({ isLoggedIn, logout }) {
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="GameList">Game List</a>
+            <a href="/gamelist">Game List</a>
           </li>
           {isLoggedIn ? (
             <>
@@ -33,7 +33,7 @@ function Navbar({ isLoggedIn, logout }) {
                 </a>
               </li>
               <li>
-                <a href="UserPage">Profile</a>
+                <a href="/userpage">Profile</a>
               </li>
             </>
           ) : (

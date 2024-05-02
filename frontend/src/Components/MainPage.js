@@ -30,6 +30,10 @@ const MainPage = ({ isLoggedIn, logout }) => {
   const location = useLocation();
   const { pathname } = location;
 
+  const compareStringCaseInsensitive = (str1, str2) => {
+    return str1.toLowerCase() === str2.toLowerCase();
+  }
+
   let currentMenu = () =>
     navmenu.find((e) => e.path.toLowerCase() === pathname.toLowerCase());
 
@@ -38,12 +42,17 @@ const MainPage = ({ isLoggedIn, logout }) => {
       <div className="header">
         <div className="titleContainer">
           <h1 className="headerTitle">{currentMenu()?.title}</h1>
+          <Navbar isLoggedIn={isLoggedIn} logout={logout} />
         </div>
-        <Navbar isLoggedIn={isLoggedIn} logout={logout} />
+        
       </div>
       {/* <SearchBar/> */}
-      {(pathname === '/login' || pathname === '/signup') && (
+      {(compareStringCaseInsensitive(pathname, '/login') || 
+        compareStringCaseInsensitive(pathname, '/signup')) && (
         <img className="contentBackground" src="1015937.jpg" alt="Halo"></img>
+      )}
+      {(compareStringCaseInsensitive(pathname, '/userpage')) && (
+        <img className="contentBackground" src="apps.4881.14611981552113165.1297136a-f273-41f1-947f-59044c848c55.jpg" alt="Halo"></img>
       )}
       {pathname === '/' && (
         <img
@@ -52,7 +61,7 @@ const MainPage = ({ isLoggedIn, logout }) => {
           alt="multiple-game-picture"
         />
       )}
-      {pathname === '/GameList' && (
+      {compareStringCaseInsensitive(pathname, '/GameList') && (
         <img
           className="background2"
           src="wp3146100.jpg"

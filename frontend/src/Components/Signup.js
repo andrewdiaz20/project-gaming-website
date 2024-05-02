@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 
 const SignUpForm = () => {
   const [formState, setFormState] = useState({
@@ -59,19 +60,19 @@ const SignUpForm = () => {
 
   return (
     <main>
-    <div className='SignT'>
+    {/* <div className='SignT'>
             <img src='istockphoto-1325074732-2048x2048.jpg'alt='game'></img>
-        </div>
-    <div>
-      <div>
+        </div> */}
+    <div className='formcontainer'>
+      {/* <div>
         <h2 className="SignupT">Sign Up</h2>
-      </div>
+      </div> */}
       {error && (
         <div className="errorContainer">
           <p>{error}</p>
         </div>
       )}
-      <form class="signUpForm"onSubmit={handleSubmit}>
+      <form class="loginform"onSubmit={handleSubmit}>
         <UserInformationForm
           firstName={formState.firstName}
           lastName={formState.lastName}
@@ -84,7 +85,7 @@ const SignUpForm = () => {
           onChange={handleInputChange}
         />
         <div className="inputContainer">
-          <input type="submit" value="Create Account" className="inputButton" />
+          <Button type="submit" variant='contained' fullWidth sx={{ mt: '20px'}}>Create Account</Button>
         </div>
         <div className="inputContainer">
           Already have an account?{' '}
@@ -92,7 +93,7 @@ const SignUpForm = () => {
         </div>
       </form>
     </div>
-    <footer></footer>
+
     </main>
   );
 };

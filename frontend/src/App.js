@@ -45,14 +45,14 @@ function App() {
        <Routes>
         <Route element={<MainPage isLoggedIn={isLoggedIn} logout={logout}/>}>
             <Route path='/' element={<Home />} />
-            <Route path='RandomGame' element={<RandomGame />} />
-            <Route path='GameList' element={<GameList />} />
-            <Route path='Login' element={<Login login={login}/>} />
-            <Route path='SignUp' element={<SignUp />} />
-            <Route path='UserPage' element={<UserPage />} />
-            <Route path='TempSearch' element={<TempSearch />} />
-            <Route path='TempReview' element={<NewReview />} />
-            <Route path='GameListPage/:name' element={<GameListPage userId={userId}/>} />
+            <Route path='/RandomGame' element={<RandomGame />} />
+            <Route path='/GameList' element={<GameList />} />
+            <Route path='/Login' element={<Login login={login}/>} />
+            <Route path='/SignUp' element={<SignUp />} />
+            <Route path='/UserPage' element={<UserPage />} />
+            <Route path='/TempSearch' element={<TempSearch />} />
+            <Route path='/TempReview' element={<NewReview />} />
+            <Route path='/GameListPage/:name' element={<GameListPage userId={userId}/>} />
           </Route>
         </Routes>
       </Router>
