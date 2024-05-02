@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
 
 import Navbar from "./Navigation";
->>>>>>> 017776e24c967599f7e4cee4f49c769921b7363d
 import React, { useState, useEffect } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
