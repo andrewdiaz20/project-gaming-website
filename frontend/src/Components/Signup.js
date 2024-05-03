@@ -60,13 +60,7 @@ const SignUpForm = () => {
 
   return (
     <main>
-    {/* <div className='SignT'>
-            <img src='istockphoto-1325074732-2048x2048.jpg'alt='game'></img>
-        </div> */}
     <div className='formcontainer'>
-      {/* <div>
-        <h2 className="SignupT">Sign Up</h2>
-      </div> */}
       {error && (
         <div className="errorContainer">
           <p>{error}</p>
