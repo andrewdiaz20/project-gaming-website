@@ -13,21 +13,33 @@ async function signUp(req, res) {
     email,
     password,
   } = req.body;
+
   const encryptedPassword = await bcrypt.hash(password, 10);
-  const user = new User({
-    name: { firstName, lastName },
-    userName,
-    email,
-    password: encryptedPassword,
-
-  });
-
-  try {
-    await user.save();
-    res.json({ success: true });
-  } catch (error) {
-    res.json({ success: false, message: error.message });
+  //Check if user with the same email already exists
+  const existingUser = await User.findOne({ email });
+  if (existingUser) {
+    return res.json({ success: false, message: 'Email already exists' });
   }
+  // Check if user already exists
+  const existingUserName = await User.findOne({ userName });
+  if (existingUserName) {
+    return res.json({ success: false, message: 'User Name already exists' });
+    
+  }
+    const user = new User({
+      name: { firstName, lastName },
+      userName,
+      email,
+      password: encryptedPassword,
+
+    });
+
+    try {
+      await user.save();
+      res.json({ success: true });
+    } catch (error) {
+      res.json({ success: false, message: error.message });
+    }
 }
 
 async function login(req, res) {
@@ -66,6 +78,8 @@ async function getUserById(req, res) {
     about: user.about
   } });
 }
+
+
 
 async function updateUser(req, res) {
   const { id, location, about } = req.body;
