@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
 import './App.css';
-import RandomGame from './Components/RandomGame';
 import Home from './Components/Home';
 import Login from './Components/Login';
 import GameListPage from './Components/GameListPage';
@@ -45,7 +44,6 @@ function App() {
        <Routes>
         <Route element={<MainPage isLoggedIn={isLoggedIn} logout={logout}/>}>
             <Route path='/' element={<Home />} />
-            <Route path='/RandomGame' element={<RandomGame />} />
             <Route path='/GameList' element={<GameList />} />
             <Route path='/Login' element={<Login login={login}/>} />
             <Route path='/SignUp' element={<SignUp />} />

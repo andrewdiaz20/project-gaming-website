@@ -123,24 +123,6 @@ async function get1Games(req, res) {
   }
 }
 
-async function RandomGame(req, res) {
-  try {
-    const VideoGames = await axios({
-      url: 'https://api.igdb.com/v4/games',
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Client-ID': CLIENT_ID,
-        Authorization: `Bearer ${ACCESS_TOKEN}`,
-      },
-      data: 'fields name, platforms.name, release_dates.date, summary; limit 1;',
-    });
-    res.json(VideoGames.data);
-  } catch (error) {
-    console.log('error getting all VideoGamess', error);
-    res.status(500).json({ message: `error geting poast requests` });
-  }
-}
 
 async function favoriteGame(req, res) {
   console.log('favorite called', req.body);

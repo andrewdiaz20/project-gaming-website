@@ -11,14 +11,6 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import IconButton from '@mui/material/IconButton';
 
-// const GameList = () => {
-//     const [games, setGames] = useState([]);
-
-//     const [isClicked, setIsClicked] = useState(false);
-
-//     function handleClick() {
-//       setIsClicked(!isClicked);
-//     }
 
 const GameList = () => {
   const [games, setGames] = useState([]);
@@ -28,19 +20,7 @@ const GameList = () => {
     return localStorage.getItem('userId');
   });
 
-  // function toAnotherPage(id){
-  //     useEffect(() => {
-  //         async function fetchIds() {
-  //           try {
-  //             const ids = await backend.getAllId();
-  //             return ids;
-  //           } catch (error) {
-  //             console.error("Error fetching ids:", error);
-  //           }
-  //         }
-  //         fetchIds();
-  //       }, []);
-  // }
+
 
   useEffect(() => {
     // Check if there are games passed in state
