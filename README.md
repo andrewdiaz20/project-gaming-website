@@ -8,7 +8,7 @@ Timmothy: (Front End, Backend)
 Daniel Flores: (Front End, Backend, DataBase)
 
 Describe your application in 3-5 sentences. Include what the functionality is and why you’ve chosen it/what problem this solves: 
-GameGlanceGiggles(GGG) is a gamer's paradise, where users can view, review, comment, and share tips.  Our team took inspiration from Facebook to implement core social media features to create an environment where gamers can share collective Ideas
+GameGlance(GG) is a gamer's paradise, where users can view, review, comment, and share tips.  Our team took inspiration from Facebook to implement core social media features to create an environment where gamers can share collective Ideas
 
 What technologies are we using (feel free to use or replace examples):
 Front End
