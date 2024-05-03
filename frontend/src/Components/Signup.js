@@ -39,14 +39,17 @@ const SignUpForm = () => {
         }
 
         const data = await response.json();
-
+        
         if (data.error) {
           setError(data.error);
-        } else {
+        } else if (!data.success) {
+          throw new Error(data.message);
+        }
+        else {
           alert('Registration successful');
         }
       } catch (error) {
-        setError(error.message);
+        alert(error.message);
       }
     };
 
