@@ -1,5 +1,5 @@
 Team name: Team 2
-Application name: GameGlance Giggles
+Application name: GameGlance
 Members:
 Andrew Diaz: (Front End, BackEnd)
 Eyrma Rostein: (Back End, Front End DataBase) 
